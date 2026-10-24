@@ -1,0 +1,72 @@
+{
+  "classes": [
+    {
+      "label": 0,
+      "name": "Bebop",
+      "origin": "existing_author_class"
+    },
+    {
+      "label": 1,
+      "name": "DJI phantom 3",
+      "origin": "existing_author_class"
+    },
+    {
+      "label": 2,
+      "name": "DJI phantom 4 pro",
+      "origin": "existing_author_class"
+    },
+    {
+      "label": 3,
+      "name": "Emax",
+      "origin": "existing_author_class"
+    },
+    {
+      "label": 4,
+      "name": "Intel Aero RTF",
+      "origin": "existing_author_class"
+    },
+    {
+      "label": 5,
+      "name": "Mambo",
+      "origin": "existing_author_class"
+    },
+    {
+      "label": 6,
+      "name": "YH 19Hw",
+      "origin": "existing_author_class"
+    },
+    {
+      "label": 7,
+      "name": "Anafi-Extended",
+      "origin": "VisioDECT_author_folder_label",
+      "exact_product_identity_verification": "pending; preserve author names"
+    },
+    {
+      "label": 8,
+      "name": "DJIFPV",
+      "origin": "VisioDECT_author_folder_label",
+      "exact_product_identity_verification": "pending; preserve author names"
+    },
+    {
+      "label": 9,
+      "name": "EFT-E410S",
+      "origin": "VisioDECT_author_folder_label",
+      "exact_product_identity_verification": "pending; preserve author names"
+    },
+    {
+      "label": 10,
+      "name": "Mavic_Air",
+      "origin": "VisioDECT_author_folder_label",
+      "exact_product_identity_verification": "pending; preserve author names"
+    },
+    {
+      "label": 11,
+      "name": "Mavic_Enterprise",
+      "origin": "VisioDECT_author_folder_label",
+      "exact_product_identity_verification": "pending; preserve author names"
+    }
+  ],
+  "status": "candidate_label_space_not_a_frozen_training_protocol",
+  "existing_seven_classes_preserved": true,
+  "synthetic_not_merged": true
+}

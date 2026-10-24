@@ -1,0 +1,4 @@
+# Install only at the GPU training stage, using a compatible PyTorch/CUDA build.
+# Colab normally supplies these; do not blindly replace its matched pair.
+torch>=2.4
+torchvision>=0.19

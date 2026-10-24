@@ -1,0 +1,126 @@
+{
+  "purpose": "Read-only public metadata inventory; no authenticated endpoints, media downloads or dataset switches.",
+  "platforms": {
+    "huggingface": [
+      {
+        "id": "hf_drone_search",
+        "host": "huggingface.co",
+        "url": "https://huggingface.co/api/datasets?search=drone&limit=100&full=true"
+      },
+      {
+        "id": "hf_uav_search",
+        "host": "huggingface.co",
+        "url": "https://huggingface.co/api/datasets?search=uav&limit=100&full=true"
+      },
+      {
+        "id": "fred_metadata",
+        "host": "huggingface.co",
+        "url": "https://huggingface.co/api/datasets/GabrieleMagrini/FRED"
+      },
+      {
+        "id": "fred_file_tree",
+        "host": "huggingface.co",
+        "url": "https://huggingface.co/api/datasets/GabrieleMagrini/FRED/tree/main?recursive=true&limit=1000"
+      },
+      {
+        "id": "fred_card",
+        "host": "huggingface.co",
+        "url": "https://huggingface.co/datasets/GabrieleMagrini/FRED/resolve/main/README.md"
+      },
+      {
+        "id": "fred_author_project",
+        "host": "miccunifi.github.io",
+        "url": "https://miccunifi.github.io/FRED/"
+      },
+      {
+        "id": "fred_author_readme",
+        "host": "raw.githubusercontent.com",
+        "url": "https://raw.githubusercontent.com/miccunifi/FRED/main/README.md"
+      },
+      {
+        "id": "cranfield_classification_card",
+        "host": "huggingface.co",
+        "url": "https://huggingface.co/datasets/mazqtpopx/cranfield-synthetic-drone-classification/resolve/main/README.md"
+      },
+      {
+        "id": "cranfield_classification_metadata",
+        "host": "huggingface.co",
+        "url": "https://huggingface.co/api/datasets/mazqtpopx/cranfield-synthetic-drone-classification"
+      },
+      {
+        "id": "cranfield_classification_tree",
+        "host": "huggingface.co",
+        "url": "https://huggingface.co/api/datasets/mazqtpopx/cranfield-synthetic-drone-classification/tree/main?recursive=true&limit=1000"
+      }
+    ],
+    "kaggle": [
+      {
+        "id": "visiodect_author_files",
+        "host": "www.kaggle.com",
+        "url": "https://www.kaggle.com/api/v1/datasets/list/simeonajakwe/visiodect-for-scenario-based-multi-drone-detection?pageSize=1000"
+      },
+      {
+        "id": "visiodect_author_metadata",
+        "host": "www.kaggle.com",
+        "url": "https://www.kaggle.com/api/v1/datasets/view/simeonajakwe/visiodect-for-scenario-based-multi-drone-detection"
+      },
+      {
+        "id": "visiodect_search",
+        "host": "www.kaggle.com",
+        "url": "https://www.kaggle.com/api/v1/datasets/list?search=VisioDECT&page=1"
+      },
+      {
+        "id": "visiodect_author_dataset_version",
+        "host": "www.kaggle.com",
+        "url": "https://www.kaggle.com/dsv/13155551"
+      },
+      {
+        "id": "kaggle_drone_search",
+        "host": "www.kaggle.com",
+        "url": "https://www.kaggle.com/api/v1/datasets/list?search=drone&page=1"
+      },
+      {
+        "id": "kaggle_drone_type_files",
+        "host": "www.kaggle.com",
+        "url": "https://www.kaggle.com/api/v1/datasets/list/balajikartheek/drone-type-classification"
+      },
+      {
+        "id": "kaggle_uav_files",
+        "host": "www.kaggle.com",
+        "url": "https://www.kaggle.com/api/v1/datasets/list/dasmehdixtr/drone-dataset-uav"
+      },
+      {
+        "id": "kaggle_drone_type_page",
+        "host": "www.kaggle.com",
+        "url": "https://www.kaggle.com/datasets/balajikartheek/drone-type-classification"
+      },
+      {
+        "id": "kaggle_drone_type_search",
+        "host": "www.kaggle.com",
+        "url": "https://www.kaggle.com/api/v1/datasets/list?search=drone%20type&page=1"
+      },
+      {
+        "id": "kaggle_drone_type_file_inventory",
+        "host": "www.kaggle.com",
+        "url": "https://www.kaggle.com/api/v1/datasets/list/balajikartheek/drone-type-classification?pageSize=1000"
+      },
+      {
+        "id": "kaggle_uav_page",
+        "host": "www.kaggle.com",
+        "url": "https://www.kaggle.com/datasets/dasmehdixtr/drone-dataset-uav"
+      }
+    ],
+    "educoder": [
+      {
+        "id": "educoder_home",
+        "host": "www.educoder.net",
+        "url": "https://www.educoder.net/"
+      },
+      {
+        "id": "educoder_public_home",
+        "host": "trustie.educoder.net",
+        "url": "https://trustie.educoder.net/"
+      }
+    ]
+  }
+}

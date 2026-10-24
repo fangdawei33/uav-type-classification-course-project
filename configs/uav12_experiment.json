@@ -1,0 +1,58 @@
+{
+  "version": "uav_type_v3_grouped_diagnostic_v1",
+  "dataset_release": "data/delivery/uav_dataset_v3",
+  "split_draft": "outputs/expansion/processing_v3/split_draft",
+  "run_directory": "outputs/experiments/uav_type_v3_v1",
+  "seed": 42,
+  "cv_folds": 2,
+  "cv_metric": "f1_macro_supported_classes",
+  "representations": ["handcrafted", "siglip2"],
+  "classifiers": ["logistic", "knn", "svm", "forest"],
+  "siglip2": {
+    "model_id": "google/siglip2-base-patch16-224",
+    "batch_size": 16,
+    "shard_size": 128,
+    "precision": "fp16_on_t4"
+  },
+  "qwen3_vl": {
+    "model_id": "Qwen/Qwen3-VL-2B-Instruct",
+    "load_in_4bit": true,
+    "compute_dtype": "float16",
+    "max_image_pixels": 150528,
+    "min_image_pixels": 50176,
+    "max_new_tokens": 8,
+    "enable_thinking": false,
+    "max_length": 1024,
+    "lora_rank": 8,
+    "lora_alpha": 16,
+    "lora_dropout": 0.05,
+    "target_modules": ["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"],
+    "epochs": 1,
+    "learning_rate": 0.00001,
+    "weight_decay": 0.01,
+    "per_device_train_batch_size": 1,
+    "gradient_accumulation_steps": 8,
+    "gradient_checkpointing": true,
+    "warmup_ratio": 0.03,
+    "seed": 42,
+    "variants": ["standard", "sqrt_class_balanced"],
+    "image_sampling": "single target crop only; no crop search or test feedback",
+    "training_scope": "development only; fixed one epoch; compare both predeclared variants",
+    "validation_policy": "one predeclared epoch; no validation-driven checkpoint selection; both variants are evaluated once after global freeze",
+    "license_note": "Check upstream model and dataset licenses before redistribution."
+  },
+  "holdout": {
+    "may_read_before_all_models_frozen": false,
+    "expected_class_coverage": 8,
+    "expected_independent_source_authentication": false
+  },
+  "limitations": [
+    "The holdout is a group-isolated diagnostic subset and covers 8 of 12 labels, not a complete 12-class test.",
+    "Conservative image-scene groups have not been authenticated as independent flights or source videos.",
+    "The grouped development CV scores only classes with at least two development constraint groups; singleton-group classes remain in every training fold.",
+    "The task is classification of author-box target crops, not end-to-end object detection.",
+    "The 135 web-collected weak-label crops are not used for supervised training or final testing.",
+    "The auxiliary synthetic dataset is not merged into this 12-class task.",
+    "No paired per-flight text or telemetry is available; this is a visual-language model image-only experiment, not multimodal sensor fusion."
+  ]
+}

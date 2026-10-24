@@ -1,0 +1,485 @@
+{
+  "request_delay_seconds": 2.0,
+  "max_html_bytes": 8000000,
+  "sources": [
+    {
+      "source_id": "quadify_sitemap",
+      "url": "https://www.quadifyrc.com/sitemap.xml",
+      "allowed_hosts": [
+        "www.quadifyrc.com",
+        "quadifyrc.com"
+      ],
+      "match_terms": [
+        "tinyhawk"
+      ],
+      "purpose": "Find actual Tinyhawk article permalinks; do not guess replacement URLs."
+    },
+    {
+      "source_id": "intel_official_external_links",
+      "url": "https://github.com/intel-aero/meta-intel-aero/wiki/99-External-Links",
+      "allowed_hosts": [
+        "github.com"
+      ],
+      "match_terms": [
+        "aero",
+        "instructables",
+        "hackster",
+        "youtube"
+      ],
+      "purpose": "Original Intel Aero project source leads; tutorial photos still need configuration/identity audit."
+    },
+    {
+      "source_id": "drone_type_paper",
+      "url": "https://arxiv.org/html/2405.10398v1",
+      "allowed_hosts": [
+        "arxiv.org"
+      ],
+      "match_terms": [
+        "youtube",
+        "youtu.be",
+        "github",
+        "drive.google",
+        "emax",
+        "tinyhawk"
+      ],
+      "purpose": "Trace dataset-level original video/source references; dataset access URL is not a flight identity."
+    },
+    {
+      "source_id": "halfchrome_tinyhawk_search",
+      "url": "https://www.halfchrome.com/?s=tinyhawk",
+      "allowed_hosts": [
+        "www.halfchrome.com",
+        "halfchrome.com"
+      ],
+      "match_terms": [
+        "tinyhawk"
+      ],
+      "purpose": "Find hands-on Emax product references; article titles do not establish equivalence to dataset Emax."
+    },
+    {
+      "source_id": "intel_official_about",
+      "url": "https://github.com/intel-aero/meta-intel-aero/wiki/01-About-Intel-Aero",
+      "allowed_hosts": [
+        "github.com"
+      ],
+      "match_terms": [
+        "aero",
+        ".jpg",
+        ".png",
+        "image",
+        "hackster",
+        "research"
+      ],
+      "purpose": "Inspect source-observed original image URLs for complete Aero RTF; board-only images are not equivalent."
+    },
+    {
+      "source_id": "halfchrome_ezpilot_search",
+      "url": "https://www.halfchrome.com/?s=ez+pilot",
+      "allowed_hosts": [
+        "www.halfchrome.com",
+        "halfchrome.com"
+      ],
+      "match_terms": [
+        "ez",
+        "pilot"
+      ],
+      "purpose": "Identify exact Emax product; do not merge Tinyhawk with EZ Pilot based on brand."
+    },
+    {
+      "source_id": "emax_original_ezpilot_product",
+      "url": "https://shop.emax-usa.com/products/ez-pilot-drone-only-replacement",
+      "allowed_hosts": [
+        "shop.emax-usa.com",
+        "emax-usa.com",
+        "www.emax-usa.com"
+      ],
+      "match_terms": [
+        "youtu",
+        "ready",
+        "ez-pilot",
+        "ez pilot"
+      ],
+      "purpose": "Manufacturer identity/reference links for original EZ Pilot; no image download or automatic dataset relabeling."
+    },
+    {
+      "source_id": "expansion_firstquad_ezpilot",
+      "url": "https://www.firstquadcopter.com/?s=ez+pilot",
+      "allowed_hosts": [
+        "www.firstquadcopter.com",
+        "firstquadcopter.com"
+      ],
+      "match_terms": [
+        "ez-pilot",
+        "ez pilot"
+      ],
+      "group": "expansion_priority",
+      "purpose": "Discover original review links for rare classes; search results are leads, not confirmed samples."
+    },
+    {
+      "source_id": "expansion_firstquad_mambo",
+      "url": "https://www.firstquadcopter.com/?s=mambo",
+      "allowed_hosts": [
+        "www.firstquadcopter.com",
+        "firstquadcopter.com"
+      ],
+      "match_terms": [
+        "mambo"
+      ],
+      "group": "expansion_priority",
+      "purpose": "Discover original review links for rare classes; search results are leads, not confirmed samples."
+    },
+    {
+      "source_id": "expansion_firstquad_yh19hw",
+      "url": "https://www.firstquadcopter.com/?s=19hw",
+      "allowed_hosts": [
+        "www.firstquadcopter.com",
+        "firstquadcopter.com"
+      ],
+      "match_terms": [
+        "19hw",
+        "19-hw"
+      ],
+      "group": "expansion_priority",
+      "purpose": "Discover original review links for rare classes; search results are leads, not confirmed samples."
+    },
+    {
+      "source_id": "expansion_firstquad_intel_aero",
+      "url": "https://www.firstquadcopter.com/?s=intel+aero",
+      "allowed_hosts": [
+        "www.firstquadcopter.com",
+        "firstquadcopter.com"
+      ],
+      "match_terms": [
+        "intel-aero",
+        "intel aero"
+      ],
+      "group": "expansion_priority",
+      "purpose": "Discover original review links for rare classes; search results are leads, not confirmed samples."
+    },
+    {
+      "source_id": "expansion_halfchrome_mambo",
+      "url": "https://www.halfchrome.com/?s=mambo",
+      "allowed_hosts": [
+        "www.halfchrome.com",
+        "halfchrome.com"
+      ],
+      "match_terms": [
+        "mambo"
+      ],
+      "group": "expansion_priority",
+      "purpose": "Find published original review/project permalinks; do not label from a search query."
+    },
+    {
+      "source_id": "expansion_droningon_yh19hw",
+      "url": "https://www.droningon.co/?s=19hw",
+      "allowed_hosts": [
+        "www.droningon.co",
+        "droningon.co"
+      ],
+      "match_terms": [
+        "19hw",
+        "19-hw"
+      ],
+      "group": "expansion_priority",
+      "purpose": "Find published original review/project permalinks; do not label from a search query."
+    },
+    {
+      "source_id": "expansion_hackaday_intel_aero",
+      "url": "https://hackaday.com/?s=intel+aero",
+      "allowed_hosts": [
+        "hackaday.com",
+        "www.hackaday.com"
+      ],
+      "match_terms": [
+        "intel-aero",
+        "intel aero"
+      ],
+      "group": "expansion_priority",
+      "purpose": "Find published original review/project permalinks; do not label from a search query."
+    },
+    {
+      "source_id": "expansion_dronedj_intel_aero",
+      "url": "https://dronedj.com/?s=intel+aero",
+      "allowed_hosts": [
+        "dronedj.com",
+        "www.dronedj.com"
+      ],
+      "match_terms": [
+        "intel-aero",
+        "intel aero"
+      ],
+      "group": "expansion_priority",
+      "purpose": "Find published original review/project permalinks; do not label from a search query."
+    },
+    {
+      "source_id": "expansion_commons_mambo",
+      "url": "https://commons.wikimedia.org/wiki/Category:Parrot_Mambo",
+      "allowed_hosts": [
+        "commons.wikimedia.org"
+      ],
+      "match_terms": [
+        "/wiki/File:",
+        "/wiki/Category:"
+      ],
+      "group": "expansion_followup",
+      "purpose": "Check whether an exact rare-class category exists; an attempted URL is not a verified source until fetched."
+    },
+    {
+      "source_id": "expansion_commons_intel_aero",
+      "url": "https://commons.wikimedia.org/wiki/Category:Intel_Aero",
+      "allowed_hosts": [
+        "commons.wikimedia.org"
+      ],
+      "match_terms": [
+        "/wiki/File:",
+        "/wiki/Category:"
+      ],
+      "group": "expansion_followup",
+      "purpose": "Check whether an exact rare-class category exists; an attempted URL is not a verified source until fetched."
+    },
+    {
+      "source_id": "expansion_commons_emax",
+      "url": "https://commons.wikimedia.org/wiki/Category:EMAX_drones",
+      "allowed_hosts": [
+        "commons.wikimedia.org"
+      ],
+      "match_terms": [
+        "/wiki/File:",
+        "/wiki/Category:"
+      ],
+      "group": "expansion_followup",
+      "purpose": "Check whether an exact rare-class category exists; an attempted URL is not a verified source until fetched."
+    },
+    {
+      "source_id": "expansion_commons_yh19hw",
+      "url": "https://commons.wikimedia.org/wiki/Category:YH_19HW",
+      "allowed_hosts": [
+        "commons.wikimedia.org"
+      ],
+      "match_terms": [
+        "/wiki/File:",
+        "/wiki/Category:"
+      ],
+      "group": "expansion_followup",
+      "purpose": "Check whether an exact rare-class category exists; an attempted URL is not a verified source until fetched."
+    },
+    {
+      "source_id": "expansion_firstquad_sitemap",
+      "url": "https://www.firstquadcopter.com/sitemap_index.xml",
+      "allowed_hosts": [
+        "www.firstquadcopter.com",
+        "firstquadcopter.com"
+      ],
+      "match_terms": [
+        ".xml"
+      ],
+      "group": "expansion_followup",
+      "purpose": "Sitemap URL published in actual robots response; observe original post sitemap links."
+    },
+    {
+      "source_id": "expansion_techradar_mambo",
+      "url": "https://www.techradar.com/reviews/parrot-mambo",
+      "allowed_hosts": [
+        "www.techradar.com",
+        "techradar.com"
+      ],
+      "match_terms": [
+        "mambo",
+        ".jpg",
+        ".png",
+        "youtu"
+      ],
+      "group": "expansion_followup",
+      "purpose": "Attempt a model-specific original review page; validate actual title/status and media before collection."
+    },
+    {
+      "source_id": "expansion_trustedreviews_mambo",
+      "url": "https://www.trustedreviews.com/reviews/parrot-mambo",
+      "allowed_hosts": [
+        "www.trustedreviews.com",
+        "trustedreviews.com"
+      ],
+      "match_terms": [
+        "mambo",
+        ".jpg",
+        ".png",
+        "youtu"
+      ],
+      "group": "expansion_followup",
+      "purpose": "Attempt a model-specific original review page; validate actual title/status and media before collection."
+    },
+    {
+      "source_id": "expansion_pcmag_mambo",
+      "url": "https://www.pcmag.com/reviews/parrot-mambo",
+      "allowed_hosts": [
+        "www.pcmag.com",
+        "pcmag.com"
+      ],
+      "match_terms": [
+        "mambo",
+        ".jpg",
+        ".png",
+        "youtu"
+      ],
+      "group": "expansion_followup",
+      "purpose": "Attempt a model-specific original review page; validate actual title/status and media before collection."
+    },
+    {
+      "source_id": "expansion_firstquad_posts1",
+      "url": "https://www.firstquadcopter.com/post-sitemap.xml",
+      "allowed_hosts": [
+        "www.firstquadcopter.com",
+        "firstquadcopter.com"
+      ],
+      "match_terms": [
+        "mambo",
+        "19hw",
+        "19-hw",
+        "ez-pilot",
+        "intel-aero"
+      ],
+      "group": "expansion_archive",
+      "purpose": "Inventory both actual observed post sitemaps for rare-model historical articles, not only current site search."
+    },
+    {
+      "source_id": "expansion_firstquad_posts2",
+      "url": "https://www.firstquadcopter.com/post-sitemap2.xml",
+      "allowed_hosts": [
+        "www.firstquadcopter.com",
+        "firstquadcopter.com"
+      ],
+      "match_terms": [
+        "mambo",
+        "19hw",
+        "19-hw",
+        "ez-pilot",
+        "intel-aero"
+      ],
+      "group": "expansion_archive",
+      "purpose": "Inventory both actual observed post sitemaps for rare-model historical articles, not only current site search."
+    },
+    {
+      "source_id": "rare_intel_first_flight",
+      "url": "https://github.com/intel-aero/meta-intel-aero/wiki/03-First-flight",
+      "allowed_hosts": [
+        "github.com"
+      ],
+      "match_terms": [
+        ".jpg",
+        ".png",
+        "youtu",
+        "aero"
+      ],
+      "group": "rare_round2",
+      "purpose": "Observed link in archived official About wiki; discover flight setup media."
+    },
+    {
+      "source_id": "rare_intel_initial_setup",
+      "url": "https://github.com/intel-aero/meta-intel-aero/wiki/02-Initial-Setup",
+      "allowed_hosts": [
+        "github.com"
+      ],
+      "match_terms": [
+        ".jpg",
+        ".png",
+        "youtu",
+        "aero"
+      ],
+      "group": "rare_round2",
+      "purpose": "Observed link in archived official About wiki; distinguish complete airframes from components."
+    },
+    {
+      "source_id": "rare_intel_ecosystem",
+      "url": "https://github.com/intel-aero/meta-intel-aero/wiki/80-Intel-Aero-Ecosystem",
+      "allowed_hosts": [
+        "github.com"
+      ],
+      "match_terms": [
+        "aero",
+        "drone",
+        "review",
+        "youtu"
+      ],
+      "group": "rare_round2",
+      "purpose": "Observed official wiki link; bounded independent project leads."
+    },
+    {
+      "source_id": "rare_halfchrome_bebop",
+      "url": "https://www.halfchrome.com/?s=bebop",
+      "allowed_hosts": [
+        "www.halfchrome.com",
+        "halfchrome.com"
+      ],
+      "match_terms": [
+        "bebop"
+      ],
+      "group": "rare_round2",
+      "purpose": "Public site search; original Bebop only, not Bebop 2."
+    },
+    {
+      "source_id": "rare_halfchrome_mambo",
+      "url": "https://www.halfchrome.com/?s=mambo",
+      "allowed_hosts": [
+        "www.halfchrome.com",
+        "halfchrome.com"
+      ],
+      "match_terms": [
+        "mambo"
+      ],
+      "group": "rare_round2",
+      "purpose": "Public site search; do not redownload previously collected comparison media."
+    },
+    {
+      "source_id": "rare_hackaday_intel",
+      "url": "https://hackaday.com/blog/?s=intel+aero",
+      "allowed_hosts": [
+        "hackaday.com"
+      ],
+      "match_terms": [
+        "aero"
+      ],
+      "group": "rare_round2",
+      "purpose": "Public site search for independently described complete Aero RTF; other Intel drones excluded."
+    },
+    {
+      "source_id": "completion_firstquad_intel",
+      "url": "https://www.firstquadcopter.com/?s=intel+aero",
+      "allowed_hosts": [
+        "www.firstquadcopter.com",
+        "firstquadcopter.com"
+      ],
+      "match_terms": [
+        "aero"
+      ],
+      "group": "completion_final",
+      "purpose": "Bounded final public source search; discovered links are not acquired images."
+    },
+    {
+      "source_id": "completion_halfchrome_intel",
+      "url": "https://www.halfchrome.com/?s=intel+aero",
+      "allowed_hosts": [
+        "www.halfchrome.com",
+        "halfchrome.com"
+      ],
+      "match_terms": [
+        "aero"
+      ],
+      "group": "completion_final",
+      "purpose": "Bounded final public source search; discovered links are not acquired images."
+    },
+    {
+      "source_id": "completion_readyset_ezpilot",
+      "url": "https://readysetdrone.com/?s=ez+pilot",
+      "allowed_hosts": [
+        "readysetdrone.com",
+        "www.readysetdrone.com"
+      ],
+      "match_terms": [
+        "pilot",
+        "youtu"
+      ],
+      "group": "completion_final",
+      "purpose": "Bounded final public source search; discovered links are not acquired images."
+    }
+  ]
+}

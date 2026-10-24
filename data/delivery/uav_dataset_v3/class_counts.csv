@@ -1,0 +1,13 @@
+﻿label,class_name,candidate_images,retained_images,excluded_pixel_duplicates,excluded_visual_quality
+0,Bebop,447,447,0,0
+1,DJI phantom 3,67,67,0,0
+2,DJI phantom 4 pro,572,572,0,0
+3,Emax,329,329,0,0
+4,Intel Aero RTF,256,256,0,0
+5,Mambo,578,578,0,0
+6,YH 19Hw,471,471,0,0
+7,Anafi-Extended,3371,3371,0,0
+8,DJIFPV,3439,3439,0,0
+9,EFT-E410S,3552,3552,0,0
+10,Mavic_Air,3519,3519,0,0
+11,Mavic_Enterprise,3417,3409,0,8

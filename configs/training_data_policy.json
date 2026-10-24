@@ -1,0 +1,63 @@
+{
+  "recorded_date": "2026-10-22",
+  "status": "external_screening_updated_public_synthetic_auxiliary_manifests_prepared",
+  "user_authorized_training_augmentation": true,
+  "active_class_scope_changed": false,
+  "new_platform_datasets_added_to_training": false,
+  "synthetic_images_generated": 0,
+  "synthetic_partition": "training_only",
+  "split_before_generation": true,
+  "cv_derivatives_allowed_only_for_current_fold_training_parents": true,
+  "test_images_allowed_as_generation_inputs": false,
+  "preferred_generation": "Generate backgrounds and composite verified original training foreground pixels; review every output.",
+  "class_mapping_rule": "No family-to-specific-model mapping without evidence; incompatible labels require a separate pretraining objective or benchmark.",
+  "conditions": [
+    {
+      "id": "A",
+      "training": "real + fixed conventional augmentation",
+      "required": true
+    },
+    {
+      "id": "B",
+      "training": "same real + structure-preserving generated backgrounds",
+      "required": true
+    },
+    {
+      "id": "C",
+      "training": "same real + conventional background pasting, matched sample count",
+      "required": false
+    },
+    {
+      "id": "D",
+      "training": "separate public synthetic pretraining then same real fine-tuning",
+      "required": false
+    }
+  ],
+  "required_lineage": [
+    "sample_id",
+    "data_origin",
+    "parent_sample_id",
+    "parent_sha256",
+    "original_source_group",
+    "partition",
+    "fold",
+    "generator_id",
+    "generator_revision",
+    "prompt",
+    "seed",
+    "generation_parameters",
+    "mask_path",
+    "mask_sha256",
+    "output_sha256",
+    "review_decision"
+  ],
+  "third_party_unknown_lineage_value": "unknown_not_fabricated",
+  "main_research_note": "docs/research/platform_datasets_and_synthetic_2026-10-22.md",
+  "third_party_synthetic_images_acquired": 8001,
+  "third_party_synthetic_auxiliary_train_candidates": 3999,
+  "third_party_synthetic_auxiliary_val_candidates": 3999,
+  "third_party_synthetic_quarantined_images": 3,
+  "source_split_independence_verified": false,
+  "main_seven_class_labels_unchanged": true,
+  "auxiliary_preparation": "outputs/auxiliary/cranfield_synthetic_classification/preparation_current.json"
+}

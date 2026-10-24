@@ -1,0 +1,347 @@
+{
+  "version": "article_source_discovery_v1",
+  "verified_date": "2026-10-22",
+  "purpose": "Discover original article media; article labels and image independence need verification.",
+  "request_delay_seconds": 2.0,
+  "max_html_bytes": 8000000,
+  "max_image_bytes": 25000000,
+  "sources": [
+    {
+      "source_id": "halfchrome_tello_vs_mambo",
+      "class_id": 5,
+      "class_name": "Mambo",
+      "url": "https://www.halfchrome.com/tello-vs-mambo/",
+      "allowed_hosts": [
+        "www.halfchrome.com",
+        "halfchrome.com"
+      ],
+      "content_selector": "article .entry-content",
+      "source_role": "hands_on_article_candidate",
+      "note": "Observed working link from site search. Article compares Tello and Mambo; every image needs instance/model review.",
+      "required_title_terms": [
+        "mambo"
+      ],
+      "discovered_via": "https://www.halfchrome.com/?s=mambo",
+      "discovery_snapshot": "outputs/crawl_pages/7af0e63485b54f23d475d2213f316d383c8de2fbc698ffd406970cb464685be4.html",
+      "enabled": true
+    },
+    {
+      "source_id": "halfchrome_yh19hw",
+      "class_id": 6,
+      "class_name": "YH 19Hw",
+      "url": "https://www.halfchrome.com/yh-19hw/",
+      "allowed_hosts": [
+        "www.halfchrome.com",
+        "halfchrome.com"
+      ],
+      "content_selector": "article .entry-content",
+      "source_role": "hands_on_article_candidate",
+      "note": "Original review candidate; exclude stock renders, comparisons and duplicate article derivatives.",
+      "required_title_terms": [
+        "yh",
+        "19"
+      ],
+      "enabled": false,
+      "status": "disabled_http_404_observed_2026-10-22"
+    },
+    {
+      "source_id": "ardupilot_intel_aero_setup",
+      "class_id": 4,
+      "class_name": "Intel Aero RTF",
+      "url": "https://discuss.ardupilot.org/t/intel-aero-rtf-testing-setup-instructions/15706",
+      "allowed_hosts": [
+        "discuss.ardupilot.org"
+      ],
+      "content_selector": ".post .cooked, .crawler-post .post, .topic-body .cooked",
+      "source_role": "first_person_setup_article_candidate",
+      "note": "Images may show setup/screenshots rather than airframes; do not use as flight observations.",
+      "required_title_terms": [
+        "intel",
+        "aero"
+      ],
+      "enabled": false,
+      "status": "disabled_topic_redirects_to_unrelated_skywalker_x8"
+    },
+    {
+      "source_id": "intel_aero_propeller_guards",
+      "class_id": 4,
+      "class_name": "Intel Aero RTF",
+      "url": "https://www.instructables.com/Intel-Aero-Drone-Adding-Propeller-Guards/",
+      "allowed_hosts": [
+        "www.instructables.com",
+        "content.instructables.com",
+        "cdn.instructables.com"
+      ],
+      "content_selector": "article",
+      "source_role": "maker_tutorial_candidate",
+      "note": "Linked by official Intel Aero wiki. Inspect complete airframes versus parts, diagrams and alternate configurations.",
+      "required_title_terms": [
+        "intel",
+        "aero",
+        "propeller"
+      ],
+      "enabled": true,
+      "discovered_via": "https://github.com/intel-aero/meta-intel-aero/wiki/99-External-Links",
+      "discovery_snapshot": "outputs/crawl_pages/36c7d1e5537573b985ac6fabf988a6abcac4a3fc4623f21787c268a290a40dbc.html",
+      "content_format": "jsonld_howto",
+      "saved_html_snapshot": "outputs/crawl_pages/3e3364d9613323ccef61fbdc6a1f596111e95864a815a8a10b5a4ab1734ff438.html",
+      "saved_html_sha256": "3e3364d9613323ccef61fbdc6a1f596111e95864a815a8a10b5a4ab1734ff438",
+      "status": "html_obtained_media_blocked_robots_http_403"
+    },
+    {
+      "source_id": "halfchrome_yh19hw_spark_clone",
+      "class_id": 6,
+      "class_name": "YH 19Hw",
+      "url": "https://www.halfchrome.com/19hw-good-looking-spark-clone/",
+      "allowed_hosts": [
+        "www.halfchrome.com",
+        "halfchrome.com"
+      ],
+      "content_selector": "article .entry-content",
+      "source_role": "hands_on_article_candidate",
+      "required_title_terms": [
+        "19hw"
+      ],
+      "note": "Candidate actual article permalink replacing the separately retained failed /yh-19hw/ lead; instance identity and independence remain unverified.",
+      "enabled": true
+    },
+    {
+      "source_id": "quadifyrc_tinyhawk_rtf",
+      "class_id": 3,
+      "class_name": "Emax",
+      "url": "https://www.quadifyrc.com/reviews/emax-tinyhawk-review-the-best-rtf-drone-ive-flown",
+      "allowed_hosts": [
+        "www.quadifyrc.com",
+        "quadifyrc.com"
+      ],
+      "content_selector": ".blog-content",
+      "title_selector": ".blog-title",
+      "source_role": "hands_on_article_candidate",
+      "required_title_terms": [
+        "tinyhawk"
+      ],
+      "note": "Tinyhawk original RTF review candidate. Does not establish that the dataset Emax class is Tinyhawk; must compare airframe and obtain identity evidence.",
+      "enabled": false,
+      "status": "disabled_http_404_observed_2026-10-22; replacement_link_found_in_public_sitemap"
+    },
+    {
+      "source_id": "quadifyrc_tinyhawk_setup_review",
+      "class_id": 3,
+      "class_name": "Emax",
+      "url": "https://www.quadifyrc.com/reviews/emax-tinyhawk-setup-and-review",
+      "allowed_hosts": [
+        "www.quadifyrc.com",
+        "quadifyrc.com"
+      ],
+      "content_selector": ".blog-content",
+      "title_selector": ".blog-title",
+      "source_role": "model_identity_reference_not_dataset_class",
+      "required_title_terms": [
+        "tinyhawk"
+      ],
+      "discovered_via": "https://www.quadifyrc.com/sitemap.xml",
+      "note": "Actual permalink parsed from public sitemap. Emax dataset exact model remains unresolved.",
+      "enabled": true,
+      "sample_scope": "reference_only",
+      "status": "Tinyhawk_reference; do_not_assign_to_dataset_Emax_without_matching_evidence"
+    },
+    {
+      "source_id": "px4_intel_aero_documentation",
+      "class_id": 4,
+      "class_name": "Intel Aero RTF",
+      "url": "https://docs.px4.io/en/flight_controller/intel_aero.html",
+      "allowed_hosts": [
+        "docs.px4.io"
+      ],
+      "content_selector": ".theme-default-content, main",
+      "required_title_terms": [
+        "aero"
+      ],
+      "source_role": "hardware_documentation_candidate_not_field_capture",
+      "discovered_via": "https://github.com/intel-aero/meta-intel-aero/wiki/99-External-Links",
+      "note": "Official project links PX4 Intel Aero hardware page. Distinguish compute board from complete ready-to-fly drone.",
+      "enabled": false,
+      "status": "disabled_current_docs_url_404; check explicitly versioned original documentation"
+    },
+    {
+      "source_id": "px4_v112_intel_aero",
+      "class_id": 4,
+      "class_name": "Intel Aero RTF",
+      "url": "https://docs.px4.io/v1.12/en/flight_controller/intel_aero.html",
+      "allowed_hosts": [
+        "docs.px4.io"
+      ],
+      "content_selector": ".theme-default-content, main",
+      "required_title_terms": [
+        "aero"
+      ],
+      "source_role": "historical_hardware_documentation_candidate_not_field_capture",
+      "note": "Explicit published documentation version candidate; actual title and airframe presence must be checked, no bypass of robots.",
+      "enabled": false,
+      "status": "disabled_versioned_docs_url_404"
+    },
+    {
+      "source_id": "intel_official_about_rtf",
+      "class_id": 4,
+      "class_name": "Intel Aero RTF",
+      "url": "https://github.com/intel-aero/meta-intel-aero/wiki/01-About-Intel-Aero",
+      "allowed_hosts": [
+        "github.com",
+        "raw.githubusercontent.com"
+      ],
+      "content_selector": "#wiki-body",
+      "required_title_terms": [
+        "aero"
+      ],
+      "source_role": "manufacturer_documentation_candidate_not_flight_capture",
+      "discovered_via": "https://github.com/intel-aero/meta-intel-aero/wiki/99-External-Links",
+      "note": "Full kit photographs may contain target; compute board, vision-only kits, cables and enclosure are not airframe images.",
+      "enabled": true,
+      "prefer_same_image_full_resolution_links": true,
+      "saved_html_snapshot": "outputs/crawl_pages/eb91a3b2327da95d6cc4dad9499bbe6576a100e29cf3353b45f4286af122f96b.html",
+      "saved_html_sha256": "eb91a3b2327da95d6cc4dad9499bbe6576a100e29cf3353b45f4286af122f96b"
+    },
+    {
+      "source_id": "halfchrome_ezpilot_original",
+      "class_id": 3,
+      "class_name": "Emax",
+      "url": "https://www.halfchrome.com/emax-ez-pilot-fpv/",
+      "allowed_hosts": [
+        "www.halfchrome.com",
+        "halfchrome.com"
+      ],
+      "content_selector": "article .entry-content",
+      "required_title_terms": [
+        "ez",
+        "pilot"
+      ],
+      "source_role": "hands_on_article_candidate",
+      "discovered_via": "https://www.halfchrome.com/?s=ez+pilot",
+      "note": "Original EZ Pilot, explicitly excluding EZ Pilot Pro. Dataset identity matching remains a separate audit.",
+      "enabled": true
+    },
+    {
+      "source_id": "firstquad_original_ezpilot_announcement",
+      "class_id": 3,
+      "class_name": "Emax",
+      "url": "https://www.firstquadcopter.com/news/emax-ez-pilot-beginner-fpv-drone/",
+      "allowed_hosts": [
+        "www.firstquadcopter.com",
+        "firstquadcopter.com"
+      ],
+      "content_selector": ".td-post-content",
+      "required_title_terms": [
+        "ez",
+        "pilot"
+      ],
+      "source_role": "product_announcement_candidate_stock_or_reused_images_need_review",
+      "group": "expansion_20261022",
+      "discovered_via": "https://www.firstquadcopter.com/?s=ez+pilot",
+      "note": "Actual link from saved public search. Do not treat product announcement or reused product photo as independent capture.",
+      "enabled": true
+    },
+    {
+      "source_id": "trustedreviews_original_mambo",
+      "class_id": 5,
+      "class_name": "Mambo",
+      "url": "https://www.trustedreviews.com/reviews/parrot-mambo",
+      "allowed_hosts": [
+        "www.trustedreviews.com",
+        "trustedreviews.com"
+      ],
+      "content_selector": ".entry-content",
+      "required_title_terms": [
+        "mambo"
+      ],
+      "source_role": "hands_on_review_candidate",
+      "group": "expansion_20261022",
+      "saved_html_snapshot": "outputs/crawl_pages/4ffbf774dcaaae6d0338504a682cabbb6b2a39165c80e4f3dd77fb8c9cff5813.html",
+      "saved_html_sha256": "4ffbf774dcaaae6d0338504a682cabbb6b2a39165c80e4f3dd77fb8c9cff5813",
+      "discovered_via": "https://www.trustedreviews.com/reviews/parrot-mambo",
+      "note": "Actual retrieved review has original IMG_ photographs; exclude app/screens, accessories-only, advertisements and renditions.",
+      "enabled": true
+    },
+    {
+      "source_id": "intel_official_first_flight",
+      "class_id": 4,
+      "class_name": "Intel Aero RTF",
+      "url": "https://github.com/intel-aero/meta-intel-aero/wiki/03-First-flight",
+      "allowed_hosts": [
+        "github.com",
+        "raw.githubusercontent.com"
+      ],
+      "content_selector": "#wiki-body",
+      "required_title_terms": [
+        "flight"
+      ],
+      "source_role": "manufacturer_guide_media_needs_photo_vs_diagram_review",
+      "group": "rare_round2",
+      "enabled": true,
+      "discovery_snapshot": "outputs/crawl_pages/5bfea41a75655969b9d655c5d3eed33bf9d4031c63b346bd79612e42f9b96f1b.html",
+      "saved_html_snapshot": "outputs/crawl_pages/5bfea41a75655969b9d655c5d3eed33bf9d4031c63b346bd79612e42f9b96f1b.html",
+      "saved_html_sha256": "5bfea41a75655969b9d655c5d3eed33bf9d4031c63b346bd79612e42f9b96f1b",
+      "prefer_same_image_full_resolution_links": true
+    },
+    {
+      "source_id": "intel_official_initial_setup",
+      "class_id": 4,
+      "class_name": "Intel Aero RTF",
+      "url": "https://github.com/intel-aero/meta-intel-aero/wiki/02-Initial-Setup",
+      "allowed_hosts": [
+        "github.com",
+        "raw.githubusercontent.com"
+      ],
+      "content_selector": "#wiki-body",
+      "required_title_terms": [
+        "setup"
+      ],
+      "source_role": "manufacturer_setup_media_complete_airframe_not_guaranteed",
+      "group": "rare_round2",
+      "enabled": true,
+      "discovery_snapshot": "outputs/crawl_pages/9cbcef385bd066dbfa23e1036f07af9e71679fc720a0465ad9071a71086ec4e1.html",
+      "saved_html_snapshot": "outputs/crawl_pages/9cbcef385bd066dbfa23e1036f07af9e71679fc720a0465ad9071a71086ec4e1.html",
+      "saved_html_sha256": "9cbcef385bd066dbfa23e1036f07af9e71679fc720a0465ad9071a71086ec4e1",
+      "prefer_same_image_full_resolution_links": true
+    },
+    {
+      "source_id": "intel_official_skysense_ecosystem",
+      "class_id": 4,
+      "class_name": "Intel Aero RTF",
+      "url": "https://github.com/intel-aero/meta-intel-aero/wiki/80-Intel-Aero-Ecosystem",
+      "allowed_hosts": [
+        "github.com",
+        "raw.githubusercontent.com"
+      ],
+      "content_selector": "#wiki-body",
+      "required_title_terms": [
+        "ecosystem"
+      ],
+      "source_role": "manufacturer_ecosystem_candidate_modified_airframe_review",
+      "group": "rare_round2",
+      "enabled": true,
+      "discovery_snapshot": "outputs/crawl_pages/8ad917d44132430b44eb867a184cd904f6108b05c9e89b39808d1b883a537083.html",
+      "saved_html_snapshot": "outputs/crawl_pages/8ad917d44132430b44eb867a184cd904f6108b05c9e89b39808d1b883a537083.html",
+      "saved_html_sha256": "8ad917d44132430b44eb867a184cd904f6108b05c9e89b39808d1b883a537083",
+      "prefer_same_image_full_resolution_links": true
+    },
+    {
+      "source_id": "halfchrome_original_bebop",
+      "class_id": 0,
+      "class_name": "Bebop",
+      "url": "https://www.halfchrome.com/bebop/",
+      "allowed_hosts": [
+        "www.halfchrome.com",
+        "halfchrome.com"
+      ],
+      "content_selector": "article .entry-content",
+      "required_title_terms": [
+        "bebop"
+      ],
+      "source_role": "review_candidate_original_bebop_not_bebop2",
+      "group": "rare_round2",
+      "enabled": true,
+      "discovery_snapshot": "outputs/crawl_pages/7a78db5a0cfe8b8f8f1a8b0a85b41f3d42dc5115f50907d823aaf95f05af204e.html"
+    }
+  ],
+  "text_usage": "provenance_and_annotation_evidence_only_not_classifier_input_or_test_prompt_tuning"
+}

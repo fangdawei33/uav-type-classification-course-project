@@ -1,0 +1,18 @@
+{
+  "version": "uav_type_v3",
+  "candidate_manifest": "outputs/expansion/visiodect_v1/candidates_sampled_review/expanded_12class_candidates.csv",
+  "destination": "data/final/uav_type_v3",
+  "work_directory": "outputs/expansion/processing_v3",
+  "seed": 42,
+  "requested_development_fraction": 0.7,
+  "crop_policy": "RGB native-size crop, floor xmin/ymin, ceil xmax/ymax; reuse existing verified v2 crops",
+  "coordinate_origin": "source xyxy used directly; author VOC origin unconfirmed, no invented correction",
+  "small_target_short_side": 24,
+  "near_candidate_hamming_distance": 3,
+  "near_candidate_gray_mae": 6.0,
+  "near_candidate_thumbnail_size": 16,
+  "similarity_policy": "Conservative constraint, not duplicate proof or authenticated flight identity. Retain nonidentical images.",
+  "content_policy": "Sampled visual review only; do not auto-label low-contrast or tiny targets as empty.",
+  "split_policy": "Respect existing scene buckets and observed similarity links. Unknown old-source identity stays in one unresolved class bucket. No random frame split fallback.",
+  "models_or_software_tests_authorized": false
+}

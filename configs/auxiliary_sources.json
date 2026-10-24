@@ -1,0 +1,18 @@
+{
+  "sources": {
+    "cranfield_synthetic_classification": {
+      "repo_id": "mazqtpopx/cranfield-synthetic-drone-classification",
+      "revision": "61f3f1858aa16eb6fbb763b0814d96dd58c0716a",
+      "filename": "cranfield-synthetic-drone-classification.zip",
+      "expected_bytes": 855922191,
+      "expected_sha256": "bb3a3b1a19ef7d79da1c1aa8ca3a35e2467d23095a6585f7aee6c17425adb322",
+      "origin": "third_party_3d_rendered_synthetic",
+      "intended_role": "auxiliary_pretraining_candidate_not_final_seven_class_samples",
+      "dataset_card_license": "cc-by-4.0",
+      "paper_doi": "10.3390/jimaging8080218",
+      "original_dataset_doi": "10.17862/cranfield.rd.19423925",
+      "current_seven_class_mapping": "unverified_do_not_merge",
+      "metadata_evidence": "outputs/platform_inventory/huggingface_followup_current.json"
+    }
+  }
+}

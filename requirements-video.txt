@@ -1,0 +1,4 @@
+# Additional CPU dependencies for Halmstad video/annotation processing.
+# Decoder documents IR compatibility only; RGB requires frame/box audit.
+opencv-python-headless>=4.10,<5
+mcos-decoder==0.1.0

@@ -1,0 +1,25 @@
+{
+  "created_at": "2026-10-22T15:27:37.265029+00:00",
+  "raw_originals": 32077,
+  "primary_classes": 12,
+  "primary_clean_images": 20010,
+  "web_weak_label_images": 135,
+  "web_supplementary_identity_images": 4,
+  "raw_source_counts": {
+    "Drone-type-Set author subset": 2973,
+    "self-written public webpage collectors": 179,
+    "Cranfield third-party synthetic four-class": 8001,
+    "VisioDECT author version 1": 20924
+  },
+  "raw_manifest_sha256": "31ba56bf8a1c690af0e20a0ab3406c099fce39de6b7571ee70ae62f03ecaa026",
+  "clean_manifest_sha256": "570c50509135bf51f6fd95c25dde6bc40e49cc05bfb1b398382eb9f06871bf87",
+  "clean_manifest_matches_frozen_v3": true,
+  "file_inventory_sha256": "db606490977dfff4424a883203bd770f565eb49105d224b4face4ea64bc30bbc",
+  "image_paths_are_relative_to_project_root": true,
+  "primary_crop_folder": "data/final/uav_type_v3/images/",
+  "active_training_split": false,
+  "all_12_class_independent_test_ready": false,
+  "data_preparation_delivery_complete": true,
+  "full_visual_expert_review_complete": false,
+  "models_or_software_tests_run": false
+}

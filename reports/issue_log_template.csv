@@ -1,0 +1,5 @@
+problem_id,stage,phenomenon,cause,solution,result,impact_on_experiment
+P001,crawling,,,,,
+P002,cleaning,,,,,
+P003,training,,,,,
+P004,evaluation,,,,,

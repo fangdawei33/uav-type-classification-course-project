@@ -1,0 +1,93 @@
+{
+  "version": "seven_class_candidate_crawl_v1",
+  "verified_date": "2026-10-22",
+  "purpose": "Collect candidate images and provenance, not automatically labelled test data.",
+  "request_delay_seconds": 2.0,
+  "max_image_bytes": 25000000,
+  "max_html_bytes": 8000000,
+  "target_per_class": 150,
+  "max_pages_per_seed": 3,
+  "classes": [
+    {
+      "class_id": 0,
+      "class_name": "Bebop",
+      "status": "candidate_sources_verified",
+      "category_urls": [
+        "https://commons.wikimedia.org/wiki/Category:Parrot_Bebop"
+      ],
+      "note": "不递归进入Bebop 2或Taken with子目录；代际与目标需逐图核实。"
+    },
+    {
+      "class_id": 1,
+      "class_name": "DJI phantom 3",
+      "status": "candidate_sources_verified",
+      "category_urls": [
+        "https://commons.wikimedia.org/wiki/Category:DJI_Phantom_3",
+        "https://commons.wikimedia.org/wiki/Category:DJI_Phantom_3_Standard",
+        "https://commons.wikimedia.org/wiki/Category:DJI_Phantom_3_Professional",
+        "https://commons.wikimedia.org/wiki/Category:DJI_Phantom_3_Advanced",
+        "https://commons.wikimedia.org/wiki/Category:DJI_Phantom_3_4K"
+      ],
+      "note": "原任务类别为Phantom 3系列；具体子型仍须记录，不把同一作者照片当独立飞行。"
+    },
+    {
+      "class_id": 2,
+      "class_name": "DJI phantom 4 pro",
+      "status": "candidate_sources_verified",
+      "category_urls": [
+        "https://commons.wikimedia.org/wiki/Category:DJI_Phantom_4_Pro"
+      ],
+      "note": "不自动纳入普通Phantom 4、Advanced、RTK、V2.0；对照图与遥控器图片需人工审核。"
+    },
+    {
+      "class_id": 3,
+      "class_name": "Emax",
+      "status": "article_candidates_exact_dataset_model_unconfirmed",
+      "category_urls": [],
+      "note": "已采原版EZ Pilot四张（3暂留/1拆机待定），但与作者Emax类对应仍待确认；Tinyhawk六张仅作身份参考。Commons目录仍未配置。",
+      "article_source_ids": [
+        "halfchrome_ezpilot_original"
+      ]
+    },
+    {
+      "class_id": 4,
+      "class_name": "Intel Aero RTF",
+      "status": "official_reference_candidate_operational_scope_pending",
+      "category_urls": [
+        "https://commons.wikimedia.org/wiki/Category:Intel_Aero"
+      ],
+      "note": "已采官方未装桨开箱图一张，仍待定；不声称已有飞行场景测试样本。此前教程图片robots403的失败记录保留。",
+      "article_source_ids": [
+        "intel_official_about_rtf"
+      ],
+      "category_probe_note": "Candidate category URL probe, not verified existence or label; record empty/404 result honestly."
+    },
+    {
+      "class_id": 5,
+      "class_name": "Mambo",
+      "status": "article_candidates_collected",
+      "category_urls": [
+        "https://commons.wikimedia.org/wiki/Category:Parrot_Mambo"
+      ],
+      "note": "同一测评三张候选，均视觉暂留，最终目标框与来源独立性待核实。",
+      "article_source_ids": [
+        "halfchrome_tello_vs_mambo"
+      ],
+      "category_probe_note": "Candidate category URL probe, not verified existence or label; record empty/404 result honestly."
+    },
+    {
+      "class_id": 6,
+      "class_name": "YH 19Hw",
+      "status": "article_candidates_collected",
+      "category_urls": [],
+      "note": "同一19HW测评四张候选，均视觉暂留；最终类别对应、框和独立性待核实。",
+      "article_source_ids": [
+        "halfchrome_yh19hw_spark_clone"
+      ]
+    }
+  ],
+  "current_status_file": "outputs/drone_type_external_current_status.json",
+  "scope_note": "category_urls applies only to Commons; article acquisitions are separately configured in article_sources.json. Current unified counts include both and exclude reference_only.",
+  "previous_pilot_cap_per_class": 30,
+  "target_per_class_note": "Raw-candidate download cap, not qualified-image target or a count guaranteed by the source."
+}

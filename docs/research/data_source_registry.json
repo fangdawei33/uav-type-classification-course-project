@@ -1,0 +1,40 @@
+{
+  "as_of": "2026-10-22",
+  "scope": "research_only_not_active_training_config",
+  "dataset": "Drone-type-Set",
+  "paper": "https://arxiv.org/html/2405.10398v1",
+  "public_folder": "https://drive.google.com/drive/folders/1EPOpqlF4vG7hp4MYnfAecVOsdQ2JwBEd",
+  "access_status": "root_and_two_class_folders_browsed_without_login",
+  "full_download_status": "not_attempted",
+  "reported_image_count": 7000,
+  "locally_verified_image_count": null,
+  "dataset_license_status": "not_verified_do_not_infer_from_arxiv_license",
+  "class_mapping_status": "class_list_observed_only_two_class_ids_sample_checked",
+  "classes": [
+    {"project_id": 0, "source_name": "Bebop", "candidate_yolo_id": 0, "id_evidence": "Bebop (1).txt preview", "folder": "https://drive.google.com/drive/folders/1MW0T8La4hSfOq7srto3FqvRPQnn1muMs", "identity_note": "Confirm generation before pairing specifications"},
+    {"project_id": 1, "source_name": "DJI phantom 3", "candidate_yolo_id": 1, "id_evidence": "expected_from_class_list_not_sample_verified", "identity_note": "Do not assume Standard versus Advanced or Professional"},
+    {"project_id": 2, "source_name": "DJI phantom 4 pro", "candidate_yolo_id": 2, "id_evidence": "expected_from_class_list_not_sample_verified", "identity_note": "Distinguish Pro V2.0"},
+    {"project_id": 3, "source_name": "Emax", "candidate_yolo_id": 3, "id_evidence": "Emax (1).txt preview", "folder": "https://drive.google.com/drive/folders/1nEQSXKAyzt0YcM8_gO1af3J5NiuHPj1z", "identity_note": "Exact product model unresolved"},
+    {"project_id": 4, "source_name": "Intel Aero RTF", "candidate_yolo_id": 4, "id_evidence": "expected_from_class_list_not_sample_verified", "identity_note": "PX4 compatibility does not establish flight identity"},
+    {"project_id": 5, "source_name": "Mambo", "candidate_yolo_id": 5, "id_evidence": "expected_from_class_list_not_sample_verified", "identity_note": "Check family and accessories"},
+    {"project_id": 6, "source_name": "YH 19Hw", "candidate_yolo_id": 6, "id_evidence": "expected_from_class_list_not_sample_verified", "identity_note": "Manufacturer document not yet verified"}
+  ],
+  "text_sources": [
+    {"url": "https://www.dji.com/support/product/phantom-3-standard", "relation": "class_level_reference_only", "sample_join_verified": false},
+    {"url": "https://www.dji.com/downloads/products/phantom-4-pro", "relation": "class_level_reference_only", "sample_join_verified": false},
+    {"url": "https://www.parrot.com/en/support/documentation/bebop-range", "relation": "class_level_reference_only", "sample_join_verified": false},
+    {"url": "https://www.parrot.com/en/support/documentation/mambo-range", "relation": "class_level_reference_only", "sample_join_verified": false},
+    {"url": "https://github.com/intel-aero/meta-intel-aero/wiki/02-Initial-Setup", "relation": "class_level_reference_only", "sample_join_verified": false}
+  ],
+  "log_source": {
+    "documentation": "https://docs.px4.io/main/en/dev_log/flight_log_analysis_statistical",
+    "browse": "https://logs.px4.io/browse",
+    "official_downloader": "https://github.com/PX4/flight_review/blob/main/app/download_logs.py",
+    "license_as_documented": "CC-BY PX4",
+    "download_attempted": false,
+    "drone_type_set_sample_join_verified": false,
+    "per_flight_text_field_coverage": "not_verified"
+  },
+  "prohibited_joins": ["random_log_to_image", "class_name_only_as_flight_identity", "ground_truth_class_selects_single_manual", "generated_description_claimed_as_measured_telemetry"],
+  "required_join_evidence": ["device_or_flight_identity", "time_or_sequence_alignment", "target_vs_observer_sensor_role", "provenance_and_license"]
+}

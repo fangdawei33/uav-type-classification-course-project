@@ -1,0 +1,6 @@
+# Install once before starting either stage; do not upgrade between development
+# extraction, LoRA training and frozen evaluation.
+-r requirements-uav12.txt
+accelerate>=1.10,<2
+peft==0.17.1
+bitsandbytes>=0.48,<0.49

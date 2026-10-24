@@ -1,0 +1,11 @@
+# Data collection and CPU experiments. Python >=3.10 recommended.
+requests>=2.31,<3
+beautifulsoup4>=4.12,<5
+Pillow>=10,<13
+gdown==6.4.2
+numpy>=1.24,<3
+pandas>=2,<3
+scikit-learn>=1.4,<2
+scikit-image>=0.22,<1
+matplotlib>=3.7,<4
+joblib>=1.3,<2

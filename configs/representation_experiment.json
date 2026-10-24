@@ -1,0 +1,38 @@
+{
+  "version": "multiclass-representation-v1",
+  "seed": 42,
+  "cv_folds": 3,
+  "public_test_fraction": 0.3,
+  "selection_metric": "f1_macro",
+  "representations": [
+    "handcrafted",
+    "siglip2"
+  ],
+  "classifiers": [
+    "logistic",
+    "knn",
+    "svm",
+    "forest"
+  ],
+  "foundation": {
+    "model_id": "google/siglip2-base-patch16-224",
+    "revision": "resolve_once_and_record_commit_before_download",
+    "batch_size": 16,
+    "normalization": "L2 per sample; no dataset-fitted transform",
+    "role": "frozen visual-language-pretrained image representation; no claim of task-specific multimodal fusion",
+    "target_gpu": "Colab GPU auto-detected; A100 40GB observed in user screenshot; T4 compatible",
+    "precision": "BF16 when runtime reports support, otherwise FP16; actual dtype pinned in extraction receipts"
+  },
+  "auxiliary": {
+    "source_id": "cranfield_synthetic_classification",
+    "task": "four source-defined classes, auxiliary diagnostic only",
+    "split": "source train for development CV; source val held out until freeze",
+    "independence": "render-parent/background groups unknown; image-level CV is diagnostic, not source-independent generalization",
+    "seven_class_mapping": null
+  },
+  "seven": {
+    "task": "seven-class annotated-region drone classification",
+    "requires": "formal clean manifest, confirmed source groups, conservative correlation isolation, group CV with all classes",
+    "current_state": "blocked_on_source_groups; candidate crops may be cached but are not approved training inputs"
+  }
+}

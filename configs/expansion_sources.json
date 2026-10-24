@@ -1,0 +1,14 @@
+{
+  "visiodect_v1": {
+    "dataset_handle": "simeonajakwe/visiodect-for-scenario-based-multi-drone-detection/versions/1",
+    "author_page": "https://www.kaggle.com/datasets/simeonajakwe/visiodect-for-scenario-based-multi-drone-detection",
+    "paper_reference_status": "Verify the original paper bibliographic record before citation; current acquisition evidence is the author dataset page.",
+    "license_as_published": "CC BY-NC-SA 4.0",
+    "author_reported_images": 20924,
+    "author_reported_labels": ["Anafi-Extended", "DJI FPV", "DJI Phantom", "EFT-E410S", "Mavic2-Air", "Mavic2-Enterprise"],
+    "raw_destination": "data/raw/expansion/visiodect_v1",
+    "data_origin": "author_real_video_frames",
+    "status": "acquire_and_audit_before_class_mapping",
+    "notes": "Do not map the generic Phantom family to Phantom 3 or Phantom 4 Pro. Preserve author Mavic naming until independently checked. Weather folders and filenames are not independent flight IDs."
+  }
+}

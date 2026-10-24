@@ -1,0 +1,3 @@
+# Additional dependency for scripts/01e_download_expansion.py.
+# Reuse the existing collection environment; no GPU dependency required.
+kagglehub==0.4.3

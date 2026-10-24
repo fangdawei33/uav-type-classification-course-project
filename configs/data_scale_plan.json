@@ -1,0 +1,51 @@
+{
+  "recorded_at": "2026-10-22T08:36:44.236224+00:00",
+  "status": "external_contact_sheet_screened_auxiliary_synthetic_prepared_primary_sources_unverified",
+  "purpose": "Correct pilot-scale collection before further annotation and model experiments.",
+  "current_public_raw_images": 2973,
+  "current_public_visual_candidates": 2720,
+  "current_external_candidates": 165,
+  "current_external_visually_retained": 125,
+  "previous_commons_pilot_cap_per_class": 30,
+  "external_planning_target_per_class": {
+    "initial_qualified_target": 100,
+    "stretch_qualified_target": 200,
+    "independent_capture_sources_target": 5
+  },
+  "seven_class_total_planning_range": [
+    700,
+    1400
+  ],
+  "targets_are_publication_requirements": false,
+  "qualified_count_means": "Real acquired images with reviewed identity, target region, duplicates and provenance; reference-only images, transforms and duplicated frames excluded from new acquisition count.",
+  "source_unit": "Documented original author/capture session or original video; URL, webpage, domain and image count are not independent-source counts.",
+  "priority_classes": [
+    "Intel Aero RTF",
+    "Emax",
+    "Mambo",
+    "YH 19Hw"
+  ],
+  "next_steps": [
+    "Inventory actual eligible source links and likely independent captures per rare class before large downloads.",
+    "Continue existing Commons categories beyond the pilot cap only after inventory; record exhaustion, duplicate and failure counts.",
+    "Estimate achievable qualified counts and source diversity; do not silently promise that every class can reach the target.",
+    "If scarce classes prevent a credible seven-class external evaluation, document a proposed benchmark/class-scope change before implementation."
+  ],
+  "scope_change_executed": false,
+  "bulk_download_started_by_this_record": false,
+  "model_training_or_evaluation_run": false,
+  "software_tests_run": false,
+  "current_external_pending": 32,
+  "platform_research_record": "docs/research/platform_datasets_and_synthetic_2026-10-22.md",
+  "commons_expansion_completed_counts": {
+    "Bebop": 44,
+    "DJI phantom 3": 63,
+    "DJI phantom 4 pro": 39
+  },
+  "platform_dataset_media_downloaded": true,
+  "current_external_rejected": 8,
+  "auxiliary_synthetic_raw_images": 8001,
+  "auxiliary_train_candidates": 3999,
+  "auxiliary_val_candidates": 3999,
+  "auxiliary_quarantined": 3
+}

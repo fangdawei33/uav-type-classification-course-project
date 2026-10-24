@@ -1,0 +1,24 @@
+{
+  "checked_at": "2026-10-22T15:15:46.086345+00:00",
+  "files_checked": 20027,
+  "issues": [],
+  "candidate_crops": 20018,
+  "retained_images": 20010,
+  "excluded": 8,
+  "class_counts": {
+    "Bebop": 447,
+    "DJI phantom 3": 67,
+    "DJI phantom 4 pro": 572,
+    "Emax": 329,
+    "Intel Aero RTF": 256,
+    "Mambo": 578,
+    "YH 19Hw": 471,
+    "Anafi-Extended": 3371,
+    "DJIFPV": 3439,
+    "EFT-E410S": 3552,
+    "Mavic_Air": 3519,
+    "Mavic_Enterprise": 3409
+  },
+  "meaning": "Actual data integrity audit, not software/model testing or full visual review.",
+  "models_or_software_tests_run": false
+}

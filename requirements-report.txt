@@ -1,0 +1,2 @@
+# Optional PDF authoring only; verified bundled runtime version used for this report.
+reportlab==4.4.9

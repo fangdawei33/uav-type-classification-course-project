@@ -1,0 +1,60 @@
+{
+  "version": "drone-type-set-acquisition-1",
+  "phase": "data_preparation_and_multiclass_representation_implementation",
+  "task": "seven dataset-defined drone classes; class identity and multimodal pairing require audit",
+  "enabled_stages": [
+    "check_environment",
+    "download_public",
+    "import_public_zip",
+    "review_data",
+    "clean_data",
+    "crawl_external",
+    "prepare_representation",
+    "extract_representation",
+    "train_representation",
+    "freeze_representation",
+    "evaluate_representation",
+    "report_representation",
+    "prepare_gpu_handoff",
+    "export_colab_transfer"
+  ],
+  "seed": 42,
+  "cleaning_review": {
+    "small_target_pixels": 24,
+    "dark_pixel_fraction": 0.75,
+    "candidate_hamming_distance": 3,
+    "candidate_gray_mean_absolute_difference": 6.0
+  },
+  "user_agent": "UAVCourseResearch/3.0 (educational; contact: https://github.com/fangdawei33)",
+  "drone_type_set": {
+    "folder_url": "https://drive.google.com/drive/folders/1EPOpqlF4vG7hp4MYnfAecVOsdQ2JwBEd",
+    "paper_url": "https://arxiv.org/html/2405.10398v1",
+    "expected_images_per_class": 1000,
+    "download_delay_seconds": 2.0,
+    "network_retries": 2,
+    "classes_in_expected_id_order": [
+      "Bebop",
+      "DJI phantom 3",
+      "DJI phantom 4 pro",
+      "Emax",
+      "Intel Aero RTF",
+      "Mambo",
+      "YH 19Hw"
+    ],
+    "class_id_verification": "Read Annotations.txt after download; flag every label/folder mismatch.",
+    "source_license": "Needs verification; paper license is not assumed to cover dataset redistribution."
+  },
+  "data_protocol": {
+    "primary_view": "target_crop",
+    "task_definition": "seven-class drone-type classification given an annotated target region",
+    "status": "public_visual_review_complete; source_identity_and_external_test_incomplete",
+    "multi_box_policy": "explicit evidenced annotation index; never choose by area alone",
+    "external_view": "independently reviewed target-region annotation under the same policy",
+    "raw_files_immutable": true,
+    "review_keep_means": "visual candidate accepted; not a verified source group or approved training split",
+    "burned_in_overlay_policy": "visual-primary-cohort-v1-2026-10-22; exclude primary cohort cases with in-crop postproduction overlays; see docs/CLEANING_PROTOCOL.md",
+    "source_hypotheses_are_verified_groups": false,
+    "visual_cohort_manifest": "data/metadata/drone_type_set_visual_cohort.csv",
+    "visual_cohort_is_formal_clean_dataset": false
+  }
+}

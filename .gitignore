@@ -1,0 +1,60 @@
+# Python and local environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+
+# Raw and processed images stay out of the code repository by default
+data/raw/**
+data/processed/**
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+# Runtime artifacts and received evidence
+outputs/**
+outputs_v2/**
+figures/**
+logs/**
+models/**
+!outputs/.gitkeep
+!figures/.gitkeep
+!logs/.gitkeep
+!models/.gitkeep
+reports/received/**
+!reports/received/.gitkeep
+*.pt
+*.pth
+*.joblib
+*.npz
+
+# User-local documents and scratch files
+~$*
+作业要求.docx
+*.txt
+
+# Local dependency and dataset caches
+.cache/
+data/downloads/
+data/metadata/**
+!data/metadata/.gitkeep
+
+# Public repository excludes
+*.zip
+*.7z
+*.tar
+*.tar.gz
+results-*
+auxiliary_results_for_report.zip
+error_handoff.zip
+uav12_results_for_report.zip
+outputs/imported_results/**
+outputs/paper_work/**
+data/final/**
+data/delivery/**
+!data/delivery/uav_dataset_v3/
+!data/delivery/uav_dataset_v3/README.md
+!data/delivery/uav_dataset_v3/class_map.json
+!data/delivery/uav_dataset_v3/class_counts.csv
+!data/delivery/uav_dataset_v3/receipt.json
+!data/delivery/uav_dataset_v3/data_integrity_audit.json
