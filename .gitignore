@@ -6,23 +6,17 @@ venv/
 .env
 
 # Raw and processed images stay out of the code repository by default
-data/raw/**
-data/processed/**
-!data/raw/.gitkeep
-!data/processed/.gitkeep
+data/raw/
+data/processed/
+data/metadata/
 
 # Runtime artifacts and received evidence
-outputs/**
-outputs_v2/**
-figures/**
-logs/**
-models/**
-!outputs/.gitkeep
-!figures/.gitkeep
-!logs/.gitkeep
-!models/.gitkeep
-reports/received/**
-!reports/received/.gitkeep
+outputs/
+outputs_v2/
+figures/
+logs/
+models/
+reports/received/
 *.pt
 *.pth
 *.joblib
@@ -36,8 +30,6 @@ reports/received/**
 # Local dependency and dataset caches
 .cache/
 data/downloads/
-data/metadata/**
-!data/metadata/.gitkeep
 
 # Public repository excludes
 *.zip
@@ -48,10 +40,9 @@ results-*
 auxiliary_results_for_report.zip
 error_handoff.zip
 uav12_results_for_report.zip
-outputs/imported_results/**
-outputs/paper_work/**
-data/final/**
-data/delivery/**
+
+data/final/
+data/delivery/*
 !data/delivery/uav_dataset_v3/
 !data/delivery/uav_dataset_v3/README.md
 !data/delivery/uav_dataset_v3/class_map.json
