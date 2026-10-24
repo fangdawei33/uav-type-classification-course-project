@@ -43,6 +43,7 @@ uav12_results_for_report.zip
 
 data/final/
 data/delivery/*
+data/delivery/uav_dataset_v3/*
 !data/delivery/uav_dataset_v3/
 !data/delivery/uav_dataset_v3/README.md
 !data/delivery/uav_dataset_v3/class_map.json
