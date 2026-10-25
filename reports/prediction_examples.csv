@@ -1,0 +1,9 @@
+﻿example_index,sample_id,truth,prediction,outcome
+0,dts_10GULQi0zBqzj9sfYDJd3oaCBmRUZ5-xs,DJI phantom 4 pro,DJI phantom 4 pro,正确
+1,dts_1-5YrBPryj37GSeCWggDO4FORDohoKNlt,DJI phantom 4 pro,DJI phantom 3,错误
+2,visio_path_0a230428d163e566e526,Anafi-Extended,Anafi-Extended,正确
+3,visio_path_000ae5213929e2df5f81,Anafi-Extended,DJIFPV,错误
+4,visio_path_007e88119d11bd692b20,DJIFPV,DJIFPV,正确
+5,visio_path_004ce27a74edf9736e4f,DJIFPV,Mavic_Enterprise,错误
+6,visio_path_000df490502dc68ee902,EFT-E410S,EFT-E410S,正确
+7,visio_path_0071aa25809b010806c5,EFT-E410S,DJIFPV,错误

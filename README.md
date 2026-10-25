@@ -4,7 +4,7 @@
 
 ## 最终实验结果
 
-主实验使用 20,010 张真实目标裁剪和 12 个作者定义类别。开发集 14,106 张，用于训练、分组交叉验证和网格搜索；冻结后的留出集 5,904 张，用于一次性最终评估。留出集实际覆盖 8 个类别，因此结果是分组诊断性留出结果，不是完整 12 类独立来源测试。
+主实验使用 20,010 张真实目标裁剪和 12 个作者定义类别。训练集 14,106 张，用于拟合、内部两折分组交叉验证和网格搜索；测试集 5,904 张，用于冻结后的最终评估。测试集实际覆盖 8 个类别，内部验证计分仅覆盖 6 类，因此不是完整 12 类独立来源测试。历史代码和清单中的 development／holdout 分别对应本文训练集／测试集；Qwen 按预设一轮训练，没有单独验证集或验证早停。
 
 | 模型 | Accuracy | Macro-F1 |
 |---|---:|---:|
@@ -16,7 +16,7 @@
 
 Qwen 微调相对于零样本有明显改善，但在本数据、目标裁剪输入、单轮 QLoRA 和冻结视觉主干设置下没有超过传统基线。项目如实保留这一结果，不把大模型名称当作性能保证。
 
-完整实验报告：[`reports/final_report.md`](reports/final_report.md)；可编辑 Word 版本：[`reports/final_report.docx`](reports/final_report.docx)。
+完整实验报告：[`reports/final_report.md`](reports/final_report.md)；按课程八章要求补充后的 Word 版本：[`reports/final_report_revised.docx`](reports/final_report_revised.docx)。原 `final_report.docx` 为历史版本，提交时使用补充版。课程要求与证据对应见 [`reports/scoring_map_v2.md`](reports/scoring_map_v2.md)。
 
 ## 目录
 

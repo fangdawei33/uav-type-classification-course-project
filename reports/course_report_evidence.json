@@ -1,0 +1,53 @@
+{
+  "report_update_only": true,
+  "models_run": false,
+  "sample_count": 20010,
+  "train_count": 14106,
+  "test_count": 5904,
+  "validation_folds": [
+    [
+      1,
+      7826,
+      6280,
+      "6 类计分／12 类训练"
+    ],
+    [
+      2,
+      8231,
+      5875,
+      "6 类计分／12 类训练"
+    ]
+  ],
+  "train_quality_missing": {
+    "width": 0,
+    "height": 0,
+    "gray_mean": 0,
+    "gray_std": 0,
+    "laplacian_variance_128": 0
+  },
+  "crop_short_side_below": {
+    "12": 57,
+    "16": 272,
+    "24": 1262,
+    "32": 3448,
+    "48": 8306,
+    "64": 14232
+  },
+  "crop_short_side_median": 51.0,
+  "tuning_deltas_percentage_points": [
+    [
+      "手工",
+      "+1.029",
+      "+0.305",
+      "+0.791"
+    ],
+    [
+      "SigLIP2",
+      "+1.302",
+      "-0.322",
+      "-0.099"
+    ]
+  ],
+  "evaluation_timestamp": "2026-10-23T10:59:46.343021+00:00",
+  "freeze_hash": "b4796acdb94e70b41240598ed441f6feb360f496cbf9294e80be07a45880e6d5"
+}
