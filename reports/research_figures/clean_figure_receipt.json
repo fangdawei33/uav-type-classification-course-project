@@ -1,0 +1,20 @@
+{
+  "files": [
+    {
+      "path": "reports/research_figures/fig01_motivation.png",
+      "sha256": "a774e8d88c0b27f79be4aca6235d028892df8c8b208015d596d71cca0d3f3a93"
+    },
+    {
+      "path": "reports/research_figures/fig01_motivation.svg",
+      "sha256": "78328fb301127f55d86c600dc2b4c1c945b24c262992e8d13b7372c3f8d5c010"
+    },
+    {
+      "path": "reports/research_figures/fig02_architecture.png",
+      "sha256": "74de1593ebf26df0d86eed49bdd15b08272a8d54ca54cb959073dde8db1250a1"
+    },
+    {
+      "path": "reports/research_figures/fig02_architecture.svg",
+      "sha256": "48410b35ceac390cbada7b122803559c5cc324a1fe20761f3eaeb61ee5229f48"
+    }
+  ]
+}

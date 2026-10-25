@@ -1,0 +1,67 @@
+{
+  "prediction_source": "outputs/imported_results/uav12_a3479ced386e1dea/outputs/experiments/uav_type_v3_v1/evaluation/qwen3_vl_lora_standard_predictions.csv",
+  "prediction_source_sha256": "6b133b7728fb3ee52eda87d85078c7294ed433fe4c2cac6454bd2502862343ba",
+  "model": "qwen3_vl_lora_standard",
+  "models_run": false,
+  "caption": "标准QLoRA的正确分类样例。四张图来自固定测试集，按视觉清晰度人工筛选，仅用于展示正确识别案例，不代表总体性能。图像保持原始裁剪内容与比例，未进行细节生成。",
+  "cases": [
+    {
+      "panel": "a",
+      "sample_id": "dts_10GULQi0zBqzj9sfYDJd3oaCBmRUZ5-xs",
+      "class_name": "DJI phantom 4 pro",
+      "true_label": 2,
+      "predicted_label": 2,
+      "native_width": 722,
+      "native_height": 473,
+      "source_dataset": "Drone-type-Set author subset",
+      "image_sha256": "ad4c6bab6bf96bf3467ce939507c90a1be476286c4660af942fc790fd4e02e74",
+      "selection": "Visually reviewed for legibility among correctly predicted frozen test samples; four distinct classes; selected illustration only"
+    },
+    {
+      "panel": "b",
+      "sample_id": "dts_1Me2WHAvopux1JsNBtldw8Ugjbz0Pp_BV",
+      "class_name": "YH 19Hw",
+      "true_label": 6,
+      "predicted_label": 6,
+      "native_width": 190,
+      "native_height": 139,
+      "source_dataset": "Drone-type-Set author subset",
+      "image_sha256": "a20b0380402968ce37d1a935d754aebe5e097b3f5eaf1fdeaa9eeb5bec9b5630",
+      "selection": "Visually reviewed for legibility among correctly predicted frozen test samples; four distinct classes; selected illustration only"
+    },
+    {
+      "panel": "c",
+      "sample_id": "visio_path_6e4ea96386f687e50105",
+      "class_name": "EFT-E410S",
+      "true_label": 9,
+      "predicted_label": 9,
+      "native_width": 178,
+      "native_height": 144,
+      "source_dataset": "VisioDECT author version 1",
+      "image_sha256": "069733adeaaaeb4577f56312adb2634cdce0ba2ba3de6cf4ceb73cebd7db2155",
+      "selection": "Visually reviewed for legibility among correctly predicted frozen test samples; four distinct classes; selected illustration only"
+    },
+    {
+      "panel": "d",
+      "sample_id": "visio_path_8e8ae597aef29d50e929",
+      "class_name": "Mavic_Air",
+      "true_label": 10,
+      "predicted_label": 10,
+      "native_width": 145,
+      "native_height": 105,
+      "source_dataset": "VisioDECT author version 1",
+      "image_sha256": "899c5e305930190faee6b6443f99fd743a6233dc7116373ffa12525e30b86a19",
+      "selection": "Visually reviewed for legibility among correctly predicted frozen test samples; four distinct classes; selected illustration only"
+    }
+  ],
+  "files": [
+    {
+      "path": "reports/standalone_figures/fig13_correct_examples_scientific.png",
+      "sha256": "0d3abd0b469ceee61537e87a86b62a5464665296be8301d18d145f16a1acd26e"
+    },
+    {
+      "path": "reports/standalone_figures/fig13_correct_examples_scientific.svg",
+      "sha256": "132e04879a29d6701c862cd0d5385deca771939adb6ac140f4d69946fee88b70"
+    }
+  ]
+}

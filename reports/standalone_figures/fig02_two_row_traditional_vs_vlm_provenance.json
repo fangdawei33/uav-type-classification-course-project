@@ -1,0 +1,15 @@
+{
+  "source_image": "data\\final\\uav_type_v3\\images\\class_02\\dts_10GULQi0zBqzj9sfYDJd3oaCBmRUZ5-xs.png",
+  "files": [
+    {
+      "path": "reports/standalone_figures/fig02_two_row_traditional_vs_vlm.png",
+      "sha256": "8e1eba13f42235d9140f7f607a5bdd61fc3cca09d1195f28c398a1d3633b0ebc"
+    },
+    {
+      "path": "reports/standalone_figures/fig02_two_row_traditional_vs_vlm.svg",
+      "sha256": "e1214823826bc00eb73b0991399a84d1bb132ed8308c860e769b303642d25d87"
+    }
+  ],
+  "models_run": false,
+  "image_modified": false
+}

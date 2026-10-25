@@ -1,6 +1,6 @@
 # 论文组织与图表安排
 
-当前版本为 `final_report_research.docx` 与同名 Markdown。参考用户提供的长视频论文和截图的论证方式，正文按六章重组，不再将课程八项要求直接当作八章。参考稿及其截图不随仓库发布，也不复制其算法、实验数字或图片。
+当前版本为 `final_report_research_v2.md` 与提交版 PDF。参考用户提供的论文组织方式，正文按六章重组，不再将课程八项要求直接当作八章；课程要求、问题记录和思考题保留在附录。参考稿及其截图不随仓库发布，也不复制其算法、实验数字或图片。
 
 | 正文 | 内容与证据 |
 | --- | --- |
@@ -19,4 +19,4 @@
 
 真实案例从已保存预测中按指定类别与正确性分层取首项，仅用于解释；来源、sample_id和图像SHA另存CSV。未使用生成图替换真实样本，没有生成不存在的注意力、验证曲线、箱线图或t-SNE。目标主干与LoRA图是代码机制的确定性示意。
 
-生成入口为 `python scripts/18_build_research_paper.py --refresh-figures`，需要已有结果、交付清单和合法取得的图像，不训练、不推理。代码位于 `research_figures.py`、`research_math.py` 和 `paper_document.py`。排版采用单栏以容纳中文长表与代码，正文和附录在同一文档；不将单栏等同于创新或发表质量。
+生成入口为 `python scripts/23_build_research_paper_v2.py`，需要已有结果、交付清单和合法取得的图像，不训练、不推理。代码位于 `research_figures.py`、`research_math.py` 和 `paper_document.py`。排版采用单栏以容纳中文长表与代码，正文和附录在同一文档；不将单栏等同于创新或发表质量。

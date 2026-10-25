@@ -1,0 +1,14 @@
+{
+  "files": [
+    {
+      "path": "reports/standalone_figures/fig02_framework_reference_style.png",
+      "sha256": "5a86041b99c733c933fd30b3ca66d9b24bb6e21b100a1027523d15c818f2d222"
+    },
+    {
+      "path": "reports/standalone_figures/fig02_framework_reference_style.svg",
+      "sha256": "22e506b5ba7aa1a7a1a0e29307bd5079a3bc3b2628b1dc3f1a2cdf45f04fd2a4"
+    }
+  ],
+  "models_run": false,
+  "style": "reference-inspired compact academic box-and-arrow diagram"
+}

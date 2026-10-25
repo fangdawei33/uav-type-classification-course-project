@@ -1,0 +1,16 @@
+{
+  "source_sample_id": "dts_1-5YrBPryj37GSeCWggDO4FORDohoKNlt",
+  "source_dataset": "Drone-type-Set author subset",
+  "source_image_sha256": "5a7d6586ecbf5d9a88d6744b1babf1a0d8018dbcb31ef1687c4faf38a574e387",
+  "native_size": [
+    84,
+    72
+  ],
+  "display": "same real crop; nearest-neighbor enlargement only",
+  "main_dataset_size": 20010,
+  "short_side_below_24": 1262,
+  "training_samples": 14106,
+  "test_samples": 5904,
+  "models_run": false,
+  "scope": "Standalone replacement candidate; report files unchanged"
+}

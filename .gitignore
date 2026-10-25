@@ -26,6 +26,9 @@ reports/received/
 ~$*
 作业要求.docx
 *.txt
+*.pptx
+24045316陈仓宜/
+reports/final/*.docx
 
 # Local dependency and dataset caches
 .cache/

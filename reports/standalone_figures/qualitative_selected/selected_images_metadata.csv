@@ -1,0 +1,9 @@
+﻿order,filename,sample_id,label,class_name,predicted_label,width,height,source_dataset,selection
+1,01_C02_DJI_phantom_4_pro_dts_10GULQi0zBqzj9sfYDJd3oaCBmRUZ5-xs.png,dts_10GULQi0zBqzj9sfYDJd3oaCBmRUZ5-xs,2,DJI phantom 4 pro,2,722,473,Drone-type-Set author subset,correct qwen3_vl_lora_standard prediction; visually checked larger/sharper candidate
+2,02_C02_DJI_phantom_4_pro_dts_14A9V-QsYRiQg03AsKvpoRZSeycz__51C.png,dts_14A9V-QsYRiQg03AsKvpoRZSeycz__51C,2,DJI phantom 4 pro,2,1145,518,Drone-type-Set author subset,correct qwen3_vl_lora_standard prediction; visually checked larger/sharper candidate
+3,03_C06_YH_19Hw_dts_1Me2WHAvopux1JsNBtldw8Ugjbz0Pp_BV.png,dts_1Me2WHAvopux1JsNBtldw8Ugjbz0Pp_BV,6,YH 19Hw,6,190,139,Drone-type-Set author subset,correct qwen3_vl_lora_standard prediction; visually checked larger/sharper candidate
+4,04_C06_YH_19Hw_dts_1X8JRY9YUPfBz6wNDP9WY6Lv2HrRHX_9J.png,dts_1X8JRY9YUPfBz6wNDP9WY6Lv2HrRHX_9J,6,YH 19Hw,6,159,104,Drone-type-Set author subset,correct qwen3_vl_lora_standard prediction; visually checked larger/sharper candidate
+5,05_C09_EFT-E410S_visio_path_6e4ea96386f687e50105.png,visio_path_6e4ea96386f687e50105,9,EFT-E410S,9,178,144,VisioDECT author version 1,correct qwen3_vl_lora_standard prediction; visually checked larger/sharper candidate
+6,06_C09_EFT-E410S_visio_path_2d62ecb4ddbe4a8b783b.png,visio_path_2d62ecb4ddbe4a8b783b,9,EFT-E410S,9,156,141,VisioDECT author version 1,correct qwen3_vl_lora_standard prediction; visually checked larger/sharper candidate
+7,07_C10_Mavic_Air_visio_path_8e8ae597aef29d50e929.png,visio_path_8e8ae597aef29d50e929,10,Mavic_Air,10,145,105,VisioDECT author version 1,correct qwen3_vl_lora_standard prediction; visually checked larger/sharper candidate
+8,08_C10_Mavic_Air_visio_path_69ff8278e5c92bd01cb4.png,visio_path_69ff8278e5c92bd01cb4,10,Mavic_Air,10,136,105,VisioDECT author version 1,correct qwen3_vl_lora_standard prediction; visually checked larger/sharper candidate
