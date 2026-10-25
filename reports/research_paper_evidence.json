@@ -1,0 +1,15 @@
+{
+  "freeze_hash": "b4796acdb94e70b41240598ed441f6feb360f496cbf9294e80be07a45880e6d5",
+  "metric_source_sha256": "b3e2242712bb20a3c8d8cb330161d63fef74bde0fe9efa106014317d111a05b3",
+  "models_run": false,
+  "gpu_used": false,
+  "equations": 10,
+  "tables": 17,
+  "referenced_figure_groups": 13,
+  "ablation_configuration_differences": [
+    "variant",
+    "balance_rule"
+  ],
+  "new_method_claim": false,
+  "scope": "Research structure with all course evidence in appendices; measured adaptation ablations only."
+}

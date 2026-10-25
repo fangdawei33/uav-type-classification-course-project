@@ -21,7 +21,7 @@ def read(path):
     return json.loads(Path(path).read_text(encoding="utf-8-sig"))
 
 
-def build_figures(root, run):
+def build_figures(root, run, output_folder="reports/paper_figures", font_scale=1.0, skip_diagrams=False):
     os.environ.setdefault("MPLCONFIGDIR", str(root / "outputs/paper_work/matplotlib_cache"))
     import matplotlib
     matplotlib.use("Agg")
@@ -41,7 +41,7 @@ def build_figures(root, run):
                          "axes.spines.top": False, "axes.spines.right": False,
                          "axes.unicode_minus": False, "svg.fonttype": "path",
                          "savefig.facecolor": "white", "figure.facecolor": "white"})
-    out = root / "reports/paper_figures"
+    out = root / output_folder
     out.mkdir(parents=True, exist_ok=True)
     measured_path = run / "evaluation/measured_results.json"
     measured = read(measured_path)
@@ -62,6 +62,15 @@ def build_figures(root, run):
         ax.tick_params(length=0, pad=5)
     files = []
     def save(fig, name):
+        if skip_diagrams and name in {"fig01_framework", "fig02_data_protocol", "fig06_adaptation"}:
+            plt.close(fig)
+            return
+        if font_scale != 1:
+            from matplotlib.text import Text
+            for artist in fig.findobj(match=Text):
+                artist.set_fontsize(artist.get_fontsize() * font_scale)
+                if "表8" in artist.get_text():
+                    artist.set_text(artist.get_text().replace("表8", "类别表"))
         for ext in ["png", "svg"]:
             path = out / (name + "." + ext)
             fig.savefig(path, dpi=320, bbox_inches="tight", pad_inches=.13)
@@ -238,7 +247,7 @@ def build_figures(root, run):
     receipt={"generated_from_saved_evidence_only":True,"models_run":False,
              "freeze_hash":measured["freeze_hash"],"test_samples":len(test),
              "metric_source_sha256":hashlib.sha256(measured_path.read_bytes()).hexdigest(),
-             "figure_font":fonts[0],"figure_groups":10,"files":files,
+             "figure_font":fonts[0],"figure_groups":len(files)//2,"files":files,
              "scale_analysis":"Post-hoc descriptive, class/source distributions vary by size; not causal, no filtering or tuning."}
     (out/"figure_receipt.json").write_text(json.dumps(receipt,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     return receipt

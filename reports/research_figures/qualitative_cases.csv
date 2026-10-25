@@ -1,0 +1,7 @@
+﻿panel,sample_id,true_label,predicted_label,image_sha256,source_dataset,selection
+a,dts_10GULQi0zBqzj9sfYDJd3oaCBmRUZ5-xs,2,2,ad4c6bab6bf96bf3467ce939507c90a1be476286c4660af942fc790fd4e02e74,Drone-type-Set author subset,first saved example for predeclared class/correctness stratum
+b,dts_1-5YrBPryj37GSeCWggDO4FORDohoKNlt,2,1,5a7d6586ecbf5d9a88d6744b1babf1a0d8018dbcb31ef1687c4faf38a574e387,Drone-type-Set author subset,first saved example for predeclared class/correctness stratum
+c,visio_path_000ae5213929e2df5f81,7,8,20f624cc0a435ba738578565f60c53fdabdb3f535ba3b91302bc33ffc8a43888,VisioDECT author version 1,first saved example for predeclared class/correctness stratum
+d,visio_path_004ce27a74edf9736e4f,8,11,78a2693cca3b52bedd0974f1a3627e18ab1027210792f500c56ea918c7429e4f,VisioDECT author version 1,first saved example for predeclared class/correctness stratum
+e,visio_path_000df490502dc68ee902,9,9,05d393c22fd8b3d078ce44535d8b1624ea42a9a7b3f63ce583f520d3c009bc88,VisioDECT author version 1,first saved example for predeclared class/correctness stratum
+f,visio_path_0039c5625f10fed13b40,10,8,017ee36ac9812c315193e78a1dfc5b853b2cad05ebe31c5932359a74058a3566,VisioDECT author version 1,first saved example for predeclared class/correctness stratum

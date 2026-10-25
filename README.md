@@ -16,9 +16,9 @@
 
 Qwen 微调相对于零样本有明显改善，但在本数据、目标裁剪输入、单轮 QLoRA 和冻结视觉主干设置下没有超过传统基线。项目如实保留这一结果，不把大模型名称当作性能保证。
 
-完整实验报告：[`reports/final_report.md`](reports/final_report.md)；当前 Word 版本：[`reports/final_report_paper.docx`](reports/final_report_paper.docx)。本版保留课程八章，按研究问题重组方法和实验，包含十组统一绘制的图表。`final_report.docx` 和 `final_report_revised.docx` 为历史版本，提交时使用当前版。课程要求与证据对应见 [`reports/scoring_map_v2.md`](reports/scoring_map_v2.md)。
+当前研究论文：[`reports/final_report_research.docx`](reports/final_report_research.docx)，正文源码：[`reports/final_report_research.md`](reports/final_report_research.md)。正文采用引言、相关工作、方法、实验与结果、分析与讨论、结论六章，课程过程与思考题保留在附录A至F；含10个可编辑公式、13组图和17张表。既有Word版本及 `final_report.md` 保留为历史过程材料，提交时使用当前研究版。课程要求与证据对应见 [`reports/scoring_map_v2.md`](reports/scoring_map_v2.md)。
 
-图表源文件：[`reports/paper_figures/`](reports/paper_figures/)，每组含320 dpi PNG和SVG；图表与章节安排说明见 [`reports/paper_structure_notes.md`](reports/paper_structure_notes.md)。已导入原结果包和数据交付清单后，可用 `python scripts/17_complete_course_report.py --refresh-figures` 重画并更新报告，额外需要 `matplotlib`、`python-docx` 和可用中文字体；该入口不训练模型。
+当前图表源文件：[`reports/research_figures/`](reports/research_figures/)，每组含320或360 dpi PNG和SVG；图表与章节安排说明见 [`reports/paper_structure_notes.md`](reports/paper_structure_notes.md)。适配消融复用已测三种配置，真实案例保留样本ID和哈希。已导入结果包、交付清单及合法获取的本地图像后，用 `python scripts/18_build_research_paper.py --refresh-figures` 重绘并更新论文；需要 `matplotlib`、`python-docx` 和中文字体，不启动模型。`17_complete_course_report.py` 保留为旧课程过程报告入口。
 
 ## 目录
 
@@ -60,7 +60,7 @@ Qwen 微调相对于零样本有明显改善，但在本数据、目标裁剪输
 
 ## 引用
 
-如果使用本项目的代码或实验协议，请引用 `reports/final_report.md`，并同时引用实际使用的数据集及其原始论文。
+如果使用本项目的代码或实验协议，请引用 `reports/final_report_research.md`，并同时引用实际使用的数据集及其原始论文。
 
 
 公开仓库地址：<https://github.com/fangdawei33/uav-type-classification-course-project>

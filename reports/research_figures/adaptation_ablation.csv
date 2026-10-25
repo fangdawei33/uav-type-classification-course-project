@@ -1,0 +1,4 @@
+﻿model,sft,class_weighting,accuracy,macro_f1
+qwen3_vl_zero_shot,False,False,0.01592140921409214,0.07939189189189189
+qwen3_vl_lora_standard,True,False,0.494579945799458,0.366812882981634
+qwen3_vl_lora_sqrt_class_balanced,True,True,0.4803523035230352,0.3670368984662398

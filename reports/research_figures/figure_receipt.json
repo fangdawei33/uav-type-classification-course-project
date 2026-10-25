@@ -1,0 +1,118 @@
+{
+  "generated_from_saved_evidence_only": true,
+  "models_run": false,
+  "freeze_hash": "b4796acdb94e70b41240598ed441f6feb360f496cbf9294e80be07a45880e6d5",
+  "test_samples": 5904,
+  "metric_source_sha256": "b3e2242712bb20a3c8d8cb330161d63fef74bde0fe9efa106014317d111a05b3",
+  "figure_font": "Microsoft YaHei",
+  "figure_groups": 13,
+  "files": [
+    {
+      "path": "reports/research_figures/fig03_dataset_profile.png",
+      "sha256": "001f03fc268aa47b86bf9c0891f93c8878de1c9477d47462d82b7e5060cee1b1"
+    },
+    {
+      "path": "reports/research_figures/fig03_dataset_profile.svg",
+      "sha256": "8975e6f7c000491197ff6854ee034f7ddccf4f26217f6f69290dfc0cc9735003"
+    },
+    {
+      "path": "reports/research_figures/fig04_model_comparison.png",
+      "sha256": "ef8809c525c43314291cae563f63dd58abbb751c126b4d03b763f93e213904db"
+    },
+    {
+      "path": "reports/research_figures/fig04_model_comparison.svg",
+      "sha256": "7828dea81e3e1b19f6ef6211f85b4a1ea936c033cd48cf43d67fc8ef0b76b5f9"
+    },
+    {
+      "path": "reports/research_figures/fig05_grid_search.png",
+      "sha256": "846adf9d1099417f3a147821db102a6af623424993879ba3dd556eba46688a55"
+    },
+    {
+      "path": "reports/research_figures/fig05_grid_search.svg",
+      "sha256": "754c85f004861bba7464d7308a293685bdde79109e33f64ab1f6ac7cc4c446bd"
+    },
+    {
+      "path": "reports/research_figures/fig07_confusion_comparison.png",
+      "sha256": "b795a50b32ed5bc955b9d27251a1dca2b4dcb825e1f67cfdf72abf3bde876f17"
+    },
+    {
+      "path": "reports/research_figures/fig07_confusion_comparison.svg",
+      "sha256": "56b4fffdaade74cffee03a0ab61f60d83997dd262d73e9efb16967fab6237c80"
+    },
+    {
+      "path": "reports/research_figures/fig08_class_f1.png",
+      "sha256": "3c69aec5980c39dd48fc9e109ff8070404acef085b07c0047dc788cbb6fb6dc4"
+    },
+    {
+      "path": "reports/research_figures/fig08_class_f1.svg",
+      "sha256": "e707bc8ed5af5973e4aef9a9cd0f99d39f154ef93fa29797989e82f0a71935e4"
+    },
+    {
+      "path": "reports/research_figures/fig10_scale_diagnostics.png",
+      "sha256": "8a51c07ef9f95b63a732abd0df14118bec01deb32e6dec69a1049a54461867c7"
+    },
+    {
+      "path": "reports/research_figures/fig10_scale_diagnostics.svg",
+      "sha256": "615804cf27ea053eb0b04b9222d5b43b7c8527447620d1b8f934165c59cb4717"
+    },
+    {
+      "path": "reports/research_figures/fig09_forest_importance.png",
+      "sha256": "fd7923ca68f97d7c337bf21703e83bbf8813e5d8cc0c12d7c42f4383a138c701"
+    },
+    {
+      "path": "reports/research_figures/fig09_forest_importance.svg",
+      "sha256": "2aa5789356a6ccfa9b297bd8075b9a8047dfbf8759548c5fb5d0a5dddde4894f"
+    },
+    {
+      "path": "reports/research_figures/fig01_motivation.png",
+      "sha256": "7f1333598ed28dd7d559a2b967f743ee72cab0df8d9e1e3d8507bd22c7c30a53"
+    },
+    {
+      "path": "reports/research_figures/fig01_motivation.svg",
+      "sha256": "b2579bcc707e2cfbca782bc3c6f26f03b99efb4d9d70c75a8024759abb4221f8"
+    },
+    {
+      "path": "reports/research_figures/fig02_architecture.png",
+      "sha256": "9d2dd86948d0cc493feb806008e39ef8051cb981adf10146e0fcca6e073cd421"
+    },
+    {
+      "path": "reports/research_figures/fig02_architecture.svg",
+      "sha256": "1b08e6b95d896b6dca2a7e14bb7365942aeefc62e347759b1c4237d9d31a7ea7"
+    },
+    {
+      "path": "reports/research_figures/fig11_ablation.png",
+      "sha256": "2cd79555d9a61dc6990d1c0c3b29fdf552b3b60e8e2d259643955fd538e8ebbb"
+    },
+    {
+      "path": "reports/research_figures/fig11_ablation.svg",
+      "sha256": "d3c78944d4d0923270406460d490ba3aecc4edcb6f5781e5665c3341a2c351c9"
+    },
+    {
+      "path": "reports/research_figures/fig12_representation.png",
+      "sha256": "e2449c0d7454a55129692c1b716114b690f20c7b4170ee2e92f528ea5c4fa765"
+    },
+    {
+      "path": "reports/research_figures/fig12_representation.svg",
+      "sha256": "264041a78e51faf0ebc3f987347fac8a5a6f4bf29985be2d761fe60aa2dd7f74"
+    },
+    {
+      "path": "reports/research_figures/fig14_training.png",
+      "sha256": "e5af69d7e0e63316c1df92e5c7d17402dfb25a419f5e3c68fb9e8451143a8545"
+    },
+    {
+      "path": "reports/research_figures/fig14_training.svg",
+      "sha256": "3a66c3bc606013e4e10320b24539effb3b5b25ba4aac7e6ee5ff53f2c98476d4"
+    },
+    {
+      "path": "reports/research_figures/fig13_qualitative.png",
+      "sha256": "3c05b5bc3e255cdbc9060b0766600e5a04a2a75b0ce265e7712c03dd9ef048e8"
+    },
+    {
+      "path": "reports/research_figures/fig13_qualitative.svg",
+      "sha256": "c368c562ba96c89a2fcdb32f7cb60c97773d9d1a85ae1d81874c0d72788bf912"
+    }
+  ],
+  "scale_analysis": "Post-hoc descriptive, class/source distributions vary by size; not causal, no filtering or tuning.",
+  "adaptation_ablation": "Existing frozen predictions only; standard/weighted receipts differ only by variant and balance_rule in their training environment.",
+  "qualitative_images": "Six low-resolution analytic panels with provenance; original media are not bundled."
+}

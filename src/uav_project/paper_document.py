@@ -103,7 +103,7 @@ def _table(doc, lines):
     p.paragraph_format.line_spacing = 0.35; p.paragraph_format.first_line_indent = Cm(0)
 
 
-def render_paper(markdown, destination):
+def render_paper(markdown, destination, research=False):
     markdown, destination = Path(markdown), Path(destination)
     doc = Document()
     # Bundled Word defaults may carry a blue rule in the Title style.
@@ -131,7 +131,7 @@ def render_paper(markdown, destination):
     footer = sec.footer.paragraphs[0]
     footer.alignment = WD_ALIGN_PARAGRAPH.CENTER
     footer.paragraph_format.first_line_indent = Cm(0)
-    _font(footer.add_run("无人机机型图像分类与多模型比较研究   "),9)
+    _font(footer.add_run("低分辨率无人机机型识别   " if research else "无人机机型图像分类与多模型比较研究   "),9)
     field = OxmlElement("w:fldSimple"); field.set(qn("w:instr"), "PAGE")
     footer._p.append(field)
     lines = markdown.read_text(encoding="utf-8").splitlines()
@@ -139,6 +139,16 @@ def render_paper(markdown, destination):
     while i < len(lines):
         line = lines[i].strip()
         if not line: i += 1; continue
+        if line.startswith("<!-- equation:"):
+            from .research_math import add_equation
+            key,number=line.removeprefix("<!-- equation:").removesuffix(" -->").split(":")
+            add_equation(doc,key,int(number))
+            i += 1
+            while i<len(lines) and lines[i].strip()!="$$": i+=1
+            i+=1
+            while i<len(lines) and lines[i].strip()!="$$": i+=1
+            i+=1
+            continue
         if line.startswith("# "):
             p = doc.add_paragraph(style="Title"); p.alignment = WD_ALIGN_PARAGRAPH.CENTER
             title = line[2:]
@@ -147,14 +157,14 @@ def render_paper(markdown, destination):
             _text(p,title,18,True,"黑体")
             p = doc.add_paragraph(); p.alignment = WD_ALIGN_PARAGRAPH.CENTER
             p.paragraph_format.first_line_indent = Cm(0)
-            _text(p,"机器学习课程综合设计实验报告",14,True,"黑体")
+            _text(p,"机器学习课程综合设计研究论文" if research else "机器学习课程综合设计实验报告",14,True,"黑体")
             i += 1; continue
         if line.startswith("### ") or line.startswith("## "):
             level = 2 if line.startswith("### ") else 1
             value = line[4:] if level == 2 else line[3:]
             p = doc.add_paragraph(style=f"Heading {level}")
             _text(p,value,14 if level == 2 else 16,True,"黑体")
-            if value.startswith("1 实验概述"):
+            if value.startswith("1 实验概述") or (research and value.startswith("1 引言")):
                 p.paragraph_format.page_break_before = True
             i += 1; continue
         if line.startswith("!["):
