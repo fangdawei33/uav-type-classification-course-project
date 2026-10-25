@@ -52,7 +52,9 @@ def _table(doc, lines):
     table.alignment = WD_TABLE_ALIGNMENT.CENTER
     table.autofit = False
     # Give descriptive columns more room than short numeric values.
-    if n == 6:
+    if n == 6 and rows[0][0] == "标签":
+        weights = [.7, 2.2, 1.1, 1.3, 1.3, 1.2]
+    elif n == 6:
         weights = [3.5, 1.7, 1.8, 1.8, 1.8, 2.2]
     elif n == 5:
         weights = [3.4, 2.6, 2.6, 2.0, 2.0]
@@ -139,7 +141,10 @@ def render_paper(markdown, destination):
         if not line: i += 1; continue
         if line.startswith("# "):
             p = doc.add_paragraph(style="Title"); p.alignment = WD_ALIGN_PARAGRAPH.CENTER
-            _text(p,line[2:],18,True,"黑体")
+            title = line[2:]
+            if len(title) > 24 and "无人机机型" in title:
+                title = title.replace("无人机机型", "无人机机型\n", 1)
+            _text(p,title,18,True,"黑体")
             p = doc.add_paragraph(); p.alignment = WD_ALIGN_PARAGRAPH.CENTER
             p.paragraph_format.first_line_indent = Cm(0)
             _text(p,"机器学习课程综合设计实验报告",14,True,"黑体")
@@ -184,11 +189,11 @@ def render_paper(markdown, destination):
                 r=p.add_run(value); _font(r,8.2,latin="Consolas")
             i += 1; continue
         p=doc.add_paragraph()
-        if re.match(r"^(表\d|图\d|代码\d)",line):
+        if re.match(r"^(表\d+|图\d+|代码\d+)\s",line):
             p.alignment=WD_ALIGN_PARAGRAPH.CENTER
             p.paragraph_format.first_line_indent=Cm(0)
             p.paragraph_format.keep_with_next=line.startswith(("表","代码"))
-            _text(p,line,10.5,True)
+            _text(p,line,10.5,not line.startswith("图"))
         elif line.startswith("项目代码仓库："):
             p.paragraph_format.first_line_indent=Cm(0)
             _text(p,"项目代码仓库：",10.5)

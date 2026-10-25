@@ -16,7 +16,9 @@
 
 Qwen 微调相对于零样本有明显改善，但在本数据、目标裁剪输入、单轮 QLoRA 和冻结视觉主干设置下没有超过传统基线。项目如实保留这一结果，不把大模型名称当作性能保证。
 
-完整实验报告：[`reports/final_report.md`](reports/final_report.md)；按课程八章要求补充后的 Word 版本：[`reports/final_report_revised.docx`](reports/final_report_revised.docx)。原 `final_report.docx` 为历史版本，提交时使用补充版。课程要求与证据对应见 [`reports/scoring_map_v2.md`](reports/scoring_map_v2.md)。
+完整实验报告：[`reports/final_report.md`](reports/final_report.md)；当前 Word 版本：[`reports/final_report_paper.docx`](reports/final_report_paper.docx)。本版保留课程八章，按研究问题重组方法和实验，包含十组统一绘制的图表。`final_report.docx` 和 `final_report_revised.docx` 为历史版本，提交时使用当前版。课程要求与证据对应见 [`reports/scoring_map_v2.md`](reports/scoring_map_v2.md)。
+
+图表源文件：[`reports/paper_figures/`](reports/paper_figures/)，每组含320 dpi PNG和SVG；图表与章节安排说明见 [`reports/paper_structure_notes.md`](reports/paper_structure_notes.md)。已导入原结果包和数据交付清单后，可用 `python scripts/17_complete_course_report.py --refresh-figures` 重画并更新报告，额外需要 `matplotlib`、`python-docx` 和可用中文字体；该入口不训练模型。
 
 ## 目录
 

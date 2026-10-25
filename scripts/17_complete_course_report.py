@@ -39,8 +39,14 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--result-root", type=Path, default=ROOT / "outputs/imported_results/uav12_a3479ced386e1dea/outputs/experiments/uav_type_v3_v1")
     parser.add_argument("--markdown-only", action="store_true")
+    parser.add_argument("--refresh-figures", action="store_true", help="Redraw publication figures from saved CSV/JSON only")
     args = parser.parse_args()
     run = args.result_root
+    if args.refresh_figures:
+        from uav_project.paper_figures import build_figures
+        build_figures(ROOT, run)
+    if not (ROOT / "reports/paper_figures/figure_receipt.json").is_file():
+        raise FileNotFoundError("Run this report command with --refresh-figures once to generate the required figures")
     measured = read(run / "evaluation/measured_results.json")
     protocol = read(run / "protocol.json")
     manifest = pd.read_csv(run / "manifest.csv", low_memory=False)
@@ -142,7 +148,14 @@ def main():
 
     本实验对应课程任务背景 2 的无人机机型分类分支，目标是完成真实数据采集、预处理、特征工程、数据划分、至少四种不同原理模型、指标比较、网格搜索和结果分析的完整流程。Drone-type-Set 提供按机型研究检测与跟踪的数据基础[1]；本研究输入是公开作者目标框裁剪后的无人机图像，输出为 0 至 11 的机型标签。分类以外的端到端目标检测不在本次实现范围内。
 
-    研究关注三个问题：不同来源的公开数据能否形成可追溯的监督样本；手工特征与冻结预训练视觉表示在相同协议下表现如何；有限预算的视觉语言模型监督适配是否改善零样本识别。网页标题、图注等文本用于采集溯源和人工核对，没有与图像逐条配对的飞行日志或传感器数据，因此本实验属于图像分类与视觉语言模型适配，不声称完成图文传感器多模态融合。
+    研究问题 RQ1 关注公开采集样本如何转化为可追溯的监督数据，并判断类别与来源组能支持怎样的评价范围；RQ2 比较手工特征与冻结预训练视觉表示在相同协议下的识别表现；RQ3 检查有限预算的视觉语言模型监督适配能否改善零样本，以及类别加权是否带来进一步收益。第3章回答数据与方法设计，第4章展示对应证据，第5章讨论误差与结论边界。
+
+    本研究的工作包括可复查的数据获取与处理流程、相同测试协议下的多模型比较，以及基于真实失败结果的细粒度识别诊断。HOG、KNN、SigLIP2 和 QLoRA 均采用既有方法，不将流程组合表述为已验证的新算法。网页标题、图注等文本用于采集溯源和人工核对，没有与图像逐条配对的飞行日志或传感器数据，因此本实验属于图像分类与视觉语言模型适配，不声称完成图文传感器多模态融合。
+
+    图1概括三条独立比较路径。传统分支用于建立有解释力的基线，Qwen 分支检验监督适配；各分支共享数据协议而非彼此融合。
+    """)
+    add("![研究框架](paper_figures/fig01_framework.png)\n\n图1 研究框架与独立比较路径。传统模型在训练内部交叉验证，Qwen 按预设参数训练；统一冻结后评价同一测试集。")
+    add("""
 
     ### 1.2 软硬件环境
 
@@ -252,6 +265,7 @@ def main():
 
     Qwen 两个 LoRA 版本都在全部训练集上按预设参数训练一轮，没有另设固定验证集，没有验证损失选检查点或验证早停。测试集在模型、参数、提示词与协议冻结后评价，未用于这次选参。没有独立验证集是本次大模型实验的局限，不能在报告阶段补写成做过三集划分。未来如需早停或比较更多 LoRA 方案，应先在训练组内设定验证组，再用新的独立测试版本评价。
     """)
+    add("![数据与评价协议](paper_figures/fig02_data_protocol.png)\n\n图2 数据构建与评价协议。自采弱标签与合成辅助材料独立登记；主清单按约束组划分训练和测试。图中原图与目标裁剪是不同计数单位。")
     add("代码4 按组构造训练折与验证折节选")
     add(excerpt("uav12_models.py", "    for fold in protocol[\"folds\"]:", "        expected = set("))
     add("""
@@ -295,14 +309,14 @@ def main():
     20,010 张主样本由原七类的 2,720 张和新增五类的 17,290 张构成。训练集覆盖 12 类，测试集覆盖 8 类；类别数量不平衡，最少类只有 67 张。下表同时报告每类的训练、测试与约束组数量，避免只用总样本量掩盖独立组不足。
     """)
     add("表8 类别与训练测试分布\n\n" + table(["标签", "作者类别名", "总数", "训练集", "测试集", "约束组"], class_rows))
-    add("![类别分布](final_figures/class_split.png)\n\n图1 各类别训练集与测试集样本分布。图中 development 对应训练集，holdout 对应测试集，四类无测试样本。")
+    add("![数据分布](paper_figures/fig03_dataset_profile.png)\n\n图3 数据分布。（a）各类别训练与测试样本数，C00至C11对应表8；（b）原生裁剪短边的互斥区间分布，反映进入主清单的尺度差异。")
     add("""
     ### 4.2 多模型测试结果
 
     各模型均评价同一批 5,904 张冻结测试样本。表中 CV-F1 对训练内部可验证六类计分，Test-F1 对测试出现八类计分，二者口径不同，不能直接将差值解释为模型过拟合程度。结果按测试 Macro-F1 降序展示，排序不改变实验前的方法声明。
     """)
     add("表9 十三组模型评价指标\n\n" + table(["表示与模型", "Accuracy", "平衡准确率", "Test-F1", "加权 F1", "CV-F1"], result_rows))
-    add("![模型性能](final_figures/model_comparison.png)\n\n图2 多模型测试性能对比。Macro-F1 对测试中有真实样本的八类取平均，测试排序仅用于结果呈现。")
+    add("![模型性能](paper_figures/fig04_model_comparison.png)\n\n图4 总体性能对比。（a）测试准确率；（b）测试八类 Macro-F1。蓝、绿、橙分别表示手工特征、SigLIP2 和 Qwen；两图采用相同排序，排序不参与模型选择。")
     add("""
     ### 4.3 调优前后对比
 
@@ -310,19 +324,26 @@ def main():
     """)
     add("表10 KNN 调优前后指标\n\n" + table(["表示与阶段", "邻居数／权重", "CV-F1 均值±标准差", "测试准确率", "测试 Macro-F1"], tuning_rows))
     add("表11 调优后的指标变化 单位为百分点\n\n" + table(["表示", "CV-F1 变化", "测试准确率变化", "测试 Macro-F1 变化"], tuning_delta))
+    add("![参数搜索](paper_figures/fig05_grid_search.png)\n\n图5 KNN 参数搜索。（a）手工表示；（b）SigLIP2 表示。统一色标显示支持六类的两折平均验证 F1，橙框标记最优组合；未使用测试分数选择网格参数。")
     add("手工 KNN 调优后测试准确率与 Macro-F1 小幅提高；SigLIP2 KNN 的验证分数提高而测试分数下降。这说明在有限来源组上的参数最优并不保证测试收益。只有一次固定分组与两折验证，未进行多随机种子重复或显著性检验，不能宣称调优收益具有统计显著性。")
     add("""
-    ### 4.4 分类预测与特征解释
+    ### 4.4 微调策略对照与训练过程
+
+    为回答 RQ3，固定 Qwen 基座、图像输入和测试协议，对比零样本、标准 LoRA 与平方根逆频率加权 LoRA。标准微调相对零样本提高了准确率与 Macro-F1；类别加权对整体 Macro-F1 的变化很小，同时准确率下降，未取得一致收益。此对照检验的是当前适配设置，不是视觉模块、训练轮数或模型尺寸的全面消融。
+
+    图6右侧来自 training_history.csv 中实际保存的逐步训练损失，未补绘验证曲线，也未将最终汇总损失当作额外训练点。两种损失目标及样本权重不同，曲线绝对大小不宜直接当作优劣排名。训练损失下降说明优化目标被拟合，不能独立证明测试泛化提升。
+    """)
+    add("![适配策略与训练过程](paper_figures/fig06_adaptation.png)\n\n图6 Qwen 适配对照。（a）相同测试集上的三种设置；（b）标准与加权 LoRA 的原始训练损失日志，各训练一轮，未设固定验证集。")
+    add("""
+    ### 4.5 类别错误与预测样例
 
     本任务标签是离散机型，无数值距离含义。以混淆矩阵、逐类 F1 和真实／预测标签样例代替回归的真实值与预测值散点图。下面展示标准 LoRA 的预测，样例按保存顺序、对指定类分别取首个正确与首个错误，避免只展示成功案例；完整 sample_id 由预测 CSV 保留。
     """)
     # Long source IDs are kept in the public evidence CSV; table shows deterministic row IDs.
     display_predictions = [[f"P{i+1:02}", *r[1:]] for i, r in enumerate(prediction_examples)]
-    add("![混淆矩阵](final_figures/primary_confusion_matrix.png)\n\n图3 标准 LoRA 在十二标签空间的测试混淆矩阵。零支持行对应无测试样本的类别，不代表其识别已被验证。")
+    add("![混淆矩阵对比](paper_figures/fig07_confusion_comparison.png)\n\n图7 手工调优 KNN 与标准 LoRA 的混淆矩阵。仅展示有测试支持的真实类别行，保留全部十二个预测类别及无效输出列；按真实类别归一化为百分比。零项不标数字，非零但不足1%的项标为＜1，类别名称见表8。")
     add("表12 标准 LoRA 真实与预测标签样例\n\n" + table(["样例编号", "真实类别", "预测类别", "判定"], display_predictions))
-    add("![逐类F1](final_figures/per_class_f1.png)\n\n图4 部分代表模型的逐类 F1。对无测试支持类别的零值应结合样本支持数解释。")
-    add("表13 手工特征随机森林的前六项重要性\n\n" + table(["特征名", "不纯度重要性"], importance_rows))
-    add("![特征重要性](final_figures/handcrafted_importance.png)\n\n图5 手工特征随机森林的不纯度重要性。该解释仅针对森林模型，不能当作 KNN、SVM 或 Qwen 的重要性。")
+    add("![逐类F1](paper_figures/fig08_class_f1.png)\n\n图8 三种代表模型的逐类 F1，统一色标为0至100%。仅显示测试有支持的八类，不能由该图推断其他四类性能。")
     add("""
     ## 5 实验分析与讨论
 
@@ -341,6 +362,10 @@ def main():
     随机森林中 lbp_0、lbp_9、saturation_mean、hue_mean 等特征排名靠前，说明该模型利用了纹理、色彩与饱和度统计。这既可能包含机体外观信息，也可能编码背景与成像条件。相关特征会分摊重要性，基于不纯度的重要性不提供因果解释；不能将其写成“色彩决定机型”。应通过独立背景、更严格来源隔离和适当的解释方法继续核对。
 
     误差还可能来自作者标签的商品子型未独立核实、相近型号形态相似、连续帧相关、部分框的目标比例低、图像压缩或遮挡，以及未认证来源组。爬虫弱标签没有混入主训练，避免引入未经确认的噪声，但也意味着本次没有验证“公开训练、自采外部测试”的研究设想。
+    """)
+    add("表13 手工特征随机森林的前六项重要性\n\n" + table(["特征名", "不纯度重要性"], importance_rows))
+    add("![森林特征重要性](paper_figures/fig09_forest_importance.png)\n\n图9 手工特征随机森林的重要性排序，仅显示前十二项。该解释针对森林模型，不能作为 KNN、SVM 或 Qwen 的重要性，也不代表因果关系。")
+    add("""
 
     ### 5.3 小目标与数据质量局限
 
@@ -350,6 +375,11 @@ def main():
         [[f"小于 {n} 像素", size_counts[str(n)], f"{size_counts[str(n)]/len(clean):.2%}"] for n in [12,16,24,32,48,64]]))
     add("""
     短边小于 24 的 1,262 张占 6.31%，小于 32 的 3,448 张占 17.23%。这回应了部分目标很小、肉眼难辨的问题，说明“清洗后”不能等同于“每张均适合细粒度机型鉴别”。尺寸只是审核线索，不存在对所有机型通用的自动可辨阈值。当前结果保留这些样本，没有执行去除后重训，也没有通过尺度消融证明低分主要由小图造成。后续需在训练阶段预定可辨认性规则，保留困难测试样本单独报告；不能在看到测试错误后删掉难例，再把新高分与旧协议直接比较。
+
+    进一步将已保存的逐图预测按原生短边分为＜24、24至31、32至47、48至63、64至95、≥96像素的互斥区间。图10显示各区间准确率与支持数，明细保存于 paper_figures/scale_diagnostics.csv。标准 LoRA 在短边＜24像素的332张测试图上准确率为8.43%，在48至63像素的1,385张上为75.31%，但在≥96像素的598张上又降至33.61%，并不呈单调关系。此分析没有重新推理、筛除测试图或拟合新参数。各区间的类别和来源组成不同，曲线差异不能解释为单纯提高分辨率即可获得的性能增益，也不是控制变量的尺度消融。
+    """)
+    add("![尺度分层诊断](paper_figures/fig10_scale_diagnostics.png)\n\n图10 目标尺度分层诊断。（a）三种代表模型在各原生短边区间的测试准确率；（b）相应测试样本数。该图为固定结果的事后描述，不提供尺度因素的因果结论。")
+    add("""
 
     ### 5.4 过拟合与欠拟合
     """)
@@ -421,10 +451,10 @@ def main():
     09d_freeze_uav12.py             冻结协议与工件
     10d_evaluate_uav12.py           冻结测试评价
     11d_export_uav12_report.py      结果导出
-    17_complete_course_report.py   读取已有结果更新报告
+    17_complete_course_report.py   更新报告，--refresh-figures 重画图表
     ```
 
-    代码采用 MIT 许可证；第三方图片、模型与数据许可单独适用。公开仓库提供代码、配置、可发布索引、汇总图表与报告，不直接再分发第三方原图、压缩包、基座权重和大体积特征。仅克隆仓库而没有合法取得的数据与模型缓存，不能直接复现全部数值。报告生成脚本需已经解包的结果 JSON／CSV 和交付清单，使用 pandas 与 python-docx，不调用模型、不启动训练。
+    代码采用 MIT 许可证；第三方图片、模型与数据许可单独适用。公开仓库提供代码、配置、可发布索引、汇总图表与报告，不直接再分发第三方原图、压缩包、基座权重和大体积特征。仅克隆仓库而没有合法取得的数据与模型缓存，不能直接复现全部数值。报告生成脚本需已经解包的结果 JSON／CSV 和交付清单，使用 pandas、python-docx 与 matplotlib，不调用模型、不启动训练。paper_figures 保存十组320 dpi PNG、SVG矢量源图、尺度诊断表与绘图回执，确保图表和固定结果对应。
     """)
     add("结果包 SHA-256：a3479ced386e1dea40528d7dd7e50a47577ccf58d17b1599272f93185dcf3eea。最终评估时间：" + measured["evaluated_at"] + "。模型与数据冻结哈希：" + measured["freeze_hash"] + "。完整环境、训练配置、日志、模型版本和预测校验记录随 uav12_results_for_report.zip 保存。")
     add("""
@@ -464,7 +494,7 @@ def main():
 
 项目代码仓库：{REPO}
 
-完整正文为 [final_report.md](final_report.md)，Word 为 [final_report_revised.docx](final_report_revised.docx)。正文按老师要求设置八章，附录保存复现材料和要求映射。
+完整正文为 [final_report.md](final_report.md)，Word 为 [final_report_paper.docx](final_report_paper.docx)。正文按老师要求设置八章，并按研究问题组织方法和实验证据，附录保存复现材料和要求映射。
 
 真实裁剪共 20,010 张，训练集 14,106 张，测试集 5,904 张，约 7∶3。development 对应训练集，holdout 对应测试集。传统模型在训练内部做两折分组验证；Qwen 未设固定验证集，未实施验证早停。
 
@@ -486,14 +516,14 @@ def main():
         ["7:3划分与防泄露", "3.4；表6；冻结清单", "14106/5904；验证六类、测试八类；组身份未认证"],
         ["四类监督模型", "3.5；表7；代码5", "逻辑回归、KNN、SVM、森林，另比较Qwen"],
         ["评价与网格搜索", "3.6、4.2、4.3；表9至表11；代码6、7", "每表示8组KNN参数×2折；无嵌套CV"],
-        ["可视化与讨论", "4.4、第5章；图1至图5", "混淆矩阵、逐类F1、森林重要性；分类无回归散点"],
+        ["可视化与讨论", "4.4、4.5、第5章；图1至图10", "框架、协议、分布、对比、网格、适配、错误与重要性"],
         ["问题记录", "第6章", "真实下载、字段、断点报错和未解决问题"],
         ["思考题与总结", "第7、8章", "四题完整作答；后续改进与已完成实验分开"],
         ["复现与开源", "附录A、B；GitHub", "不再分发第三方原图与大权重；用户自行制作PPT"]]) + "\n"
     (report_dir / "scoring_map_v2.md").write_text(mapping, encoding="utf-8")
     if not args.markdown_only:
         from uav_project.paper_document import render_paper
-        render_paper(report_dir / "final_report.md", report_dir / "final_report_revised.docx")
+        render_paper(report_dir / "final_report.md", report_dir / "final_report_paper.docx")
     print(f"Report updated from saved results: {len(body):,} characters, {len(results)} result rows; no models run.")
 
 

@@ -2,7 +2,7 @@
 
 项目代码仓库：https://github.com/fangdawei33/uav-type-classification-course-project
 
-完整正文为 [final_report.md](final_report.md)，Word 为 [final_report_revised.docx](final_report_revised.docx)。正文按老师要求设置八章，附录保存复现材料和要求映射。
+完整正文为 [final_report.md](final_report.md)，Word 为 [final_report_paper.docx](final_report_paper.docx)。正文按老师要求设置八章，并按研究问题组织方法和实验证据，附录保存复现材料和要求映射。
 
 真实裁剪共 20,010 张，训练集 14,106 张，测试集 5,904 张，约 7∶3。development 对应训练集，holdout 对应测试集。传统模型在训练内部做两折分组验证；Qwen 未设固定验证集，未实施验证早停。
 
